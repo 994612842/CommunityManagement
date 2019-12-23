@@ -70,9 +70,5 @@ namespace CommunityManagement
             this.Hide();
             CMPrint.CMprint.Show();
         }
-        private void CMMain_Load(object sender, EventArgs e)
-        {
-            
-        }
     }
 }

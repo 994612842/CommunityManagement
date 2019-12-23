@@ -54,21 +54,16 @@ namespace CommunityManagement
                     textBox1.Text = "Sql数据库连接失败!";
                     break;
             }
-            
         }
         //登录
         private void button1_Click(object sender, EventArgs e)
         {
-            /*SqlConnection sqldb = new SqlConnection();
-            sqldb.ConnectionString = "";
-            sqldb.Open();
-            string urname="", urpassword="", urtable="", uridentity="";
-            SqlCommand sqlCmd = new SqlCommand($"Select count(*) from {urtable} where {urname} = {Login_UserName.Text.Trim()} and {urpassword} = {Login_Password.Text.Trim()}",sqldb);
+            SqlConnection sqlLogin = new SqlConnection();
+            sqlLogin.ConnectionString = "Data Source = Localhost; Initial Catalog = CommunityManagement; Persist Security Info = True; User ID = sa; Password = 123";
+            sqlLogin.Open();
+            //string urname = "", urpassword = "", urtable = "", uridentity = "";
+            SqlCommand sqlCmd = new SqlCommand($"Select count(*) from userXMJ where userid = '{Login_UserName.Text.Trim()}' and userpassword = '{Login_Password.Text.Trim()}'", sqlLogin);
 
-            //username = Login_UserName.Text.Trim();
-           // password = Login_Password.Text.Trim();
-            */
-            
             if (Login_Password.Text.Trim() == "" || Login_UserName.Text.Trim() == "")
             {
                 sqlstatus = status.SqlConnectFaile;
@@ -76,13 +71,13 @@ namespace CommunityManagement
                 Login_UserName.Text = "";
                 Login_Password.Text = "";
             }
-            /*else if ((int)sqlCmd.ExecuteScalar()<1)
+            else if ((int)sqlCmd.ExecuteScalar()<1)
             {
                 MessageBox.Show("用户名或密码错误，请重新输入", "找不到匹配用户", MessageBoxButtons.OK);
                 foreach (Control text in this.Controls)
                     if (text.GetType().Name == "TextBox")
                         text.Text = "";
-            }*/
+            }
             else
             {
                 sqlstatus = status.SqlConnected;

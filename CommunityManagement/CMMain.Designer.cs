@@ -122,7 +122,6 @@
             this.Name = "CMMain";
             this.Text = "社区管理系统";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CMMain_FormClosed);
-            this.Load += new System.EventHandler(this.CMMain_Load);
             this.ResumeLayout(false);
 
         }

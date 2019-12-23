@@ -45,7 +45,7 @@
             this.label1.Location = new System.Drawing.Point(123, 79);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(47, 12);
-            this.label1.TabIndex = 0;
+            this.label1.TabIndex = 6;
             this.label1.Text = "用户名:";
             // 
             // textBox1
@@ -61,7 +61,7 @@
             this.label2.Location = new System.Drawing.Point(123, 104);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(47, 12);
-            this.label2.TabIndex = 0;
+            this.label2.TabIndex = 7;
             this.label2.Text = "密  码:";
             // 
             // textBox2
@@ -78,7 +78,7 @@
             this.button1.Location = new System.Drawing.Point(113, 182);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
+            this.button1.TabIndex = 3;
             this.button1.Text = "确认";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -89,7 +89,7 @@
             this.label3.Location = new System.Drawing.Point(111, 131);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(59, 12);
-            this.label3.TabIndex = 0;
+            this.label3.TabIndex = 8;
             this.label3.Text = "重复密码:";
             // 
             // textBox3
@@ -106,7 +106,7 @@
             this.button2.Location = new System.Drawing.Point(195, 182);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 3;
+            this.button2.TabIndex = 4;
             this.button2.Text = "重置";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -116,7 +116,7 @@
             this.button3.Location = new System.Drawing.Point(276, 182);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 4;
+            this.button3.TabIndex = 5;
             this.button3.Text = "取消";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
