@@ -1,6 +1,6 @@
 ﻿namespace CommunityManagement
 {
-    partial class VolunteerSheet
+    partial class CultureEvent
     {
         /// <summary>
         /// Required designer variable.
@@ -30,18 +30,19 @@
         {
             this.SuspendLayout();
             // 
-            // VolunteerSheet
+            // CultureEvent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.ControlBox = false;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "VolunteerSheet";
+            this.Name = "CultureEvent";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.Text = "社区志愿者统计";
+            this.Text = "社区文体信息管理";
             this.ResumeLayout(false);
 
         }

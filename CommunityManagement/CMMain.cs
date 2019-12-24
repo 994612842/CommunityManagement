@@ -27,7 +27,7 @@ namespace CommunityManagement
         {
             Application.Exit();
         }
-
+        //社区概况
         private void button1_Click(object sender, EventArgs e)
         {
             CMGeneralInfo.GeneralInfo = new CMGeneralInfo();
@@ -35,28 +35,15 @@ namespace CommunityManagement
             CMGeneralInfo.GeneralInfo.Show();
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            CMService.service = new CMService();
-            this.Hide();
-            CMService.service.Show();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            CMCivilAffairs.civilAffairs = new CMCivilAffairs();
-            this.Hide();
-            CMCivilAffairs.civilAffairs.Show();
-        }
-
+        //居民档案管理
         private void button4_Click(object sender, EventArgs e)
         {
-            CMComprehensive.comprehensive = new CMComprehensive();
+            CMResident.resident = new CMResident();
             this.Hide();
-            CMComprehensive.comprehensive.Show();
+            CMResident.resident.Show();
         }
 
-
+        //系统维护
         private void button5_Click(object sender, EventArgs e)
         {
             CMSysMaintained.maintained = new CMSysMaintained();
@@ -64,11 +51,12 @@ namespace CommunityManagement
             CMSysMaintained.maintained.Show();
         }
 
+        //打印报表
         private void button6_Click(object sender, EventArgs e)
         {
-            CMPrint.CMprint = new CMPrint();
+            CMPrinter.Printer = new CMPrinter();
             this.Hide();
-            CMPrint.CMprint.Show();
+            CMPrinter.Printer.Show();
         }
     }
 }

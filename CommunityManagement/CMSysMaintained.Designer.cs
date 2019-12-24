@@ -30,10 +30,6 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.用户管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.新建用户ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.修改用户ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.删除用户ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.显示所有用户ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.系统设置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.更改密码ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
@@ -53,42 +49,10 @@
             // 
             // 用户管理ToolStripMenuItem
             // 
-            this.用户管理ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.新建用户ToolStripMenuItem,
-            this.修改用户ToolStripMenuItem,
-            this.删除用户ToolStripMenuItem,
-            this.显示所有用户ToolStripMenuItem});
             this.用户管理ToolStripMenuItem.Name = "用户管理ToolStripMenuItem";
             this.用户管理ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
             this.用户管理ToolStripMenuItem.Text = "用户管理";
-            // 
-            // 新建用户ToolStripMenuItem
-            // 
-            this.新建用户ToolStripMenuItem.Name = "新建用户ToolStripMenuItem";
-            this.新建用户ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.新建用户ToolStripMenuItem.Text = "新建用户";
-            this.新建用户ToolStripMenuItem.Click += new System.EventHandler(this.新建用户ToolStripMenuItem_Click);
-            // 
-            // 修改用户ToolStripMenuItem
-            // 
-            this.修改用户ToolStripMenuItem.Name = "修改用户ToolStripMenuItem";
-            this.修改用户ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.修改用户ToolStripMenuItem.Text = "修改用户";
-            this.修改用户ToolStripMenuItem.Click += new System.EventHandler(this.修改用户ToolStripMenuItem_Click);
-            // 
-            // 删除用户ToolStripMenuItem
-            // 
-            this.删除用户ToolStripMenuItem.Name = "删除用户ToolStripMenuItem";
-            this.删除用户ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.删除用户ToolStripMenuItem.Text = "删除用户";
-            this.删除用户ToolStripMenuItem.Click += new System.EventHandler(this.删除用户ToolStripMenuItem_Click);
-            // 
-            // 显示所有用户ToolStripMenuItem
-            // 
-            this.显示所有用户ToolStripMenuItem.Name = "显示所有用户ToolStripMenuItem";
-            this.显示所有用户ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.显示所有用户ToolStripMenuItem.Text = "显示所有用户";
-            this.显示所有用户ToolStripMenuItem.Click += new System.EventHandler(this.显示所有用户ToolStripMenuItem_Click);
+            this.用户管理ToolStripMenuItem.Click += new System.EventHandler(this.用户管理ToolStripMenuItem_Click);
             // 
             // 系统设置ToolStripMenuItem
             // 
@@ -128,9 +92,5 @@
         private System.Windows.Forms.ToolStripMenuItem 用户管理ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 系统设置ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 更改密码ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 新建用户ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 修改用户ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 删除用户ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 显示所有用户ToolStripMenuItem;
     }
 }

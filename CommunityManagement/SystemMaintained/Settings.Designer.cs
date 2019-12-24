@@ -1,6 +1,6 @@
 ﻿namespace CommunityManagement
 {
-    partial class VolunteerSheet
+    partial class Settings
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@
         {
             this.SuspendLayout();
             // 
-            // VolunteerSheet
+            // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -38,10 +38,10 @@
             this.ControlBox = false;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "VolunteerSheet";
+            this.Name = "Settings";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.Text = "社区志愿者统计";
+            this.Text = "系统设置";
             this.ResumeLayout(false);
 
         }

@@ -19,6 +19,7 @@ namespace CommunityManagement
     
     public partial class CMLogin : Form
     {
+        public static string CurrentUser;
         public static CMLogin mLogin = null;
         public static string username, password,identity;
         public status sqlstatus = status.SqlConnecting;
@@ -61,7 +62,6 @@ namespace CommunityManagement
             SqlConnection sqlLogin = new SqlConnection();
             sqlLogin.ConnectionString = "Data Source = Localhost; Initial Catalog = CommunityManagement; Persist Security Info = True; User ID = sa; Password = 123";
             sqlLogin.Open();
-            //string urname = "", urpassword = "", urtable = "", uridentity = "";
             SqlCommand sqlCmd = new SqlCommand($"Select count(*) from userXMJ where userid = '{Login_UserName.Text.Trim()}' and userpassword = '{Login_Password.Text.Trim()}'", sqlLogin);
 
             if (Login_Password.Text.Trim() == "" || Login_UserName.Text.Trim() == "")
@@ -81,6 +81,7 @@ namespace CommunityManagement
             else
             {
                 sqlstatus = status.SqlConnected;
+                CurrentUser = Login_UserName.Text.Trim();
                 CMMain.main = new CMMain();
                 this.Hide();
                 CMMain.main.Show();
