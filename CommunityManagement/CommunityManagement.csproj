@@ -87,6 +87,12 @@
     <Compile Include="CMSysMaintained.Designer.cs">
       <DependentUpon>CMSysMaintained.cs</DependentUpon>
     </Compile>
+    <Compile Include="GeneralInfo\CultureEvents\Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GeneralInfo\CultureEvents\Add.Designer.cs">
+      <DependentUpon>Add.cs</DependentUpon>
+    </Compile>
     <Compile Include="GeneralInfo\Organization\OrganMod.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -217,6 +223,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CMSysMaintained.resx">
       <DependentUpon>CMSysMaintained.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GeneralInfo\CultureEvents\Add.resx">
+      <DependentUpon>Add.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GeneralInfo\Organization\OrganMod.resx">
       <DependentUpon>OrganMod.cs</DependentUpon>

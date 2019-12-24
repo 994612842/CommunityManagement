@@ -165,5 +165,58 @@ namespace CommunityManagement
                 conn.Close();
             }
         }
+        
+        private void button5_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if(conn.State != ConnectionState.Open)
+                    conn.Open();
+                SqlCommand sercherway = new SqlCommand();
+                if (radid.Checked == true)
+                    sercherway.CommandText = $"select organid 团体编号,name 团体名称,intro 团体简介,activity 活动,leader 负责人 from [dbo].[organizationXMJ] where organid = '{textBox1.Text.Trim()}'";
+                else if (radname.Checked == true)
+                    sercherway.CommandText = $"select organid 团体编号, name 团体名称,intro 团体简介, activity 活动,leader 负责人 from[dbo].[organizationXMJ] where name = '{textBox1.Text.Trim()}'";
+                else
+                    sercherway.CommandText = $"select organid 团体编号,name 团体名称,intro 团体简介,activity 活动,leader 负责人 from [dbo].[organizationXMJ] where leader = '{textBox1.Text.Trim()}'";
+                sercherway.Connection = conn;
+                SqlDataAdapter sercher = new SqlDataAdapter(sercherway);
+                DataSet ds = new DataSet();
+                sercher.Fill(ds,"[dbo].[organizationXMJ]");
+                dataGridView1.AutoGenerateColumns = true;
+                dataGridView1.DataSource = ds.Tables["[dbo].[organizationXMJ]"];
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Oops", MessageBoxButtons.OK);
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                if (conn.State != ConnectionState.Open)
+                    conn.Open();
+                SqlCommand sercherway = new SqlCommand();
+                if (radid.Checked == true)
+                    sercherway.CommandText = $"select organid 团体编号,name 团体名称,intro 团体简介,activity 活动,leader 负责人 from [dbo].[organizationXMJ] where organid like '%{textBox1.Text.Trim()}%'";
+                else if (radname.Checked == true)
+                    sercherway.CommandText = $"select organid 团体编号, name 团体名称,intro 团体简介, activity 活动,leader 负责人 from[dbo].[organizationXMJ] where name like '%{textBox1.Text.Trim()}%'";
+                else
+                    sercherway.CommandText = $"select organid 团体编号,name 团体名称,intro 团体简介,activity 活动,leader 负责人 from [dbo].[organizationXMJ] where leader like '%{textBox1.Text.Trim()}%'";
+                sercherway.Connection = conn;
+                SqlDataAdapter sercher = new SqlDataAdapter(sercherway);
+                DataSet ds = new DataSet();
+                sercher.Fill(ds, "[dbo].[organizationXMJ]");
+                dataGridView1.AutoGenerateColumns = true;
+                dataGridView1.DataSource = ds.Tables["[dbo].[organizationXMJ]"];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Oops!", MessageBoxButtons.OK);
+            }
+        }
     }
 }
