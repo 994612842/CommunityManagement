@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-
+using CMMethod;
 namespace CommunityManagement
 {
     public enum status
@@ -19,9 +19,10 @@ namespace CommunityManagement
     
     public partial class CMLogin : Form
     {
+        useridentity user;
         public static string CurrentUser;
         public static CMLogin mLogin = null;
-        public static string username, password,identity;
+        public static string identity;
         public status sqlstatus = status.SqlConnecting;
         public CMLogin()
         {
@@ -63,6 +64,8 @@ namespace CommunityManagement
             sqlLogin.ConnectionString = "Data Source = Localhost; Initial Catalog = CommunityManagement; Persist Security Info = True; User ID = sa; Password = 123";
             sqlLogin.Open();
             SqlCommand sqlCmd = new SqlCommand($"Select count(*) from userXMJ where userid = '{Login_UserName.Text.Trim()}' and userpassword = '{Login_Password.Text.Trim()}'", sqlLogin);
+            DataSet ds = new DataSet();
+            SqlDataAdapter da = new SqlDataAdapter();
 
             if (Login_Password.Text.Trim() == "" || Login_UserName.Text.Trim() == "")
             {
@@ -80,7 +83,10 @@ namespace CommunityManagement
             }
             else
             {
-                sqlstatus = status.SqlConnected;
+                da.SelectCommand = new SqlCommand($"Select useridentity from userXMJ where userid = '{Login_UserName.Text.Trim()}' and userpassword = '{Login_Password.Text.Trim()}'", sqlLogin);
+                da.Fill(ds);
+
+                identity = ds.Tables[0].Rows[0].ItemArray[0].ToString();
                 CurrentUser = Login_UserName.Text.Trim();
                 CMMain.main = new CMMain();
                 this.Hide();

@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using CMMethod;
 
 namespace CommunityManagement
 {
@@ -91,7 +92,7 @@ namespace CommunityManagement
 
         private void CMGeneralInfo_Load(object sender, EventArgs e)
         {
-            toolStripStatusLabel1.Text = "当前登录用户:" + CMLogin.CurrentUser;
+            toolStripStatusLabel1.Text = "当前登录用户:" + CMLogin.CurrentUser + "          用户类型:" + userSwitch.Getidentity(CMLogin.identity) ;
         }
     }
 }

@@ -87,6 +87,12 @@
     <Compile Include="CMSysMaintained.Designer.cs">
       <DependentUpon>CMSysMaintained.cs</DependentUpon>
     </Compile>
+    <Compile Include="GeneralInfo\Organization\OrganMod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GeneralInfo\Organization\OrganMod.Designer.cs">
+      <DependentUpon>OrganMod.cs</DependentUpon>
+    </Compile>
     <Compile Include="GeneralInfo\Organization\OrganAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -212,6 +218,9 @@
     <EmbeddedResource Include="CMSysMaintained.resx">
       <DependentUpon>CMSysMaintained.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GeneralInfo\Organization\OrganMod.resx">
+      <DependentUpon>OrganMod.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GeneralInfo\Organization\OrganAdd.resx">
       <DependentUpon>OrganAdd.cs</DependentUpon>
     </EmbeddedResource>
@@ -283,7 +292,12 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\方法\CMMethod.csproj">
+      <Project>{1b552576-66c7-4a9e-bda4-d59148e9e797}</Project>
+      <Name>CMMethod</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\dog&amp;fish.jpg" />
   </ItemGroup>
