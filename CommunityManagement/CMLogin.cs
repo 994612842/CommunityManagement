@@ -40,6 +40,7 @@ namespace CommunityManagement
             {
                 e.Cancel = true;
                 this.Show();
+                CMMain.main.Close();
             }
         }
         private void CMLogin_Load(object sender, EventArgs e)

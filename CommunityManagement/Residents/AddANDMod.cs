@@ -45,5 +45,10 @@ namespace CommunityManagement
                 textBox7.Text = Health.value7.ToString();
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -78,6 +78,7 @@ namespace CommunityManagement
 
         private void 下岗职工管理ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.dataGridView1.Visible = false;
             this.button1.Visible = false;
             this.button2.Visible = false;
             this.button3.Visible = false;

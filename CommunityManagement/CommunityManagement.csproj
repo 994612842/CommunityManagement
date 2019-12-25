@@ -45,10 +45,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ResidentAdd.cs">
+    <Compile Include="Residents\ResidentAdd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ResidentAdd.Designer.cs">
+    <Compile Include="Residents\ResidentAdd.Designer.cs">
       <DependentUpon>ResidentAdd.cs</DependentUpon>
     </Compile>
     <Compile Include="Residents\AddANDMod.cs">
@@ -128,6 +128,12 @@
     </Compile>
     <Compile Include="Printer\Recreational.Designer.cs">
       <DependentUpon>Recreational.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubMod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubMod.Designer.cs">
+      <DependentUpon>SubMod.cs</DependentUpon>
     </Compile>
     <Compile Include="SystemMaintained\PwdChanges.cs">
       <SubType>Form</SubType>
@@ -215,6 +221,12 @@
     <Compile Include="SystemMaintained\UserInfo.Designer.cs">
       <DependentUpon>UserInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Residents\VolunteerAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Residents\VolunteerAdd.Designer.cs">
+      <DependentUpon>VolunteerAdd.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CMPrinter.resx">
       <DependentUpon>CMPrinter.cs</DependentUpon>
     </EmbeddedResource>
@@ -257,7 +269,7 @@
     <EmbeddedResource Include="Printer\VolunteerSheet.resx">
       <DependentUpon>VolunteerSheet.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ResidentAdd.resx">
+    <EmbeddedResource Include="Residents\ResidentAdd.resx">
       <DependentUpon>ResidentAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Residents\AddANDMod.resx">
@@ -300,6 +312,9 @@
     <EmbeddedResource Include="Residents\Volunteer.resx">
       <DependentUpon>Volunteer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SubMod.resx">
+      <DependentUpon>SubMod.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SystemMaintained\PwdChanges.resx">
       <DependentUpon>PwdChanges.cs</DependentUpon>
     </EmbeddedResource>
@@ -308,6 +323,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SystemMaintained\UserInfo.resx">
       <DependentUpon>UserInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Residents\VolunteerAdd.resx">
+      <DependentUpon>VolunteerAdd.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="Properties\Settings.settings">
