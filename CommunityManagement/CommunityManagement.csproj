@@ -45,6 +45,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ResidentAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResidentAdd.Designer.cs">
+      <DependentUpon>ResidentAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Residents\AddANDMod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Residents\AddANDMod.Designer.cs">
+      <DependentUpon>AddANDMod.cs</DependentUpon>
+    </Compile>
     <Compile Include="CMPrinter.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -244,6 +256,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Printer\VolunteerSheet.resx">
       <DependentUpon>VolunteerSheet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResidentAdd.resx">
+      <DependentUpon>ResidentAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Residents\AddANDMod.resx">
+      <DependentUpon>AddANDMod.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Residents\Disables.resx">
       <DependentUpon>Disables.cs</DependentUpon>

@@ -37,11 +37,9 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.radioButton6 = new System.Windows.Forms.RadioButton();
             this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.radioButton6 = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,6 +54,7 @@
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(13, 56);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 23;
@@ -149,6 +148,28 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // button3
+            // 
+            this.button3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.button3.Location = new System.Drawing.Point(249, 343);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(100, 33);
+            this.button3.TabIndex = 6;
+            this.button3.Text = "显示所有信息";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button5
+            // 
+            this.button5.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.button5.Location = new System.Drawing.Point(400, 344);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(100, 33);
+            this.button5.TabIndex = 6;
+            this.button5.Text = "修改";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // radioButton6
             // 
             this.radioButton6.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -160,56 +181,13 @@
             this.radioButton6.Text = "肺活量";
             this.radioButton6.UseVisualStyleBackColor = true;
             // 
-            // button3
-            // 
-            this.button3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button3.Location = new System.Drawing.Point(143, 344);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(100, 33);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "显示所有信息";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button4
-            // 
-            this.button4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button4.Location = new System.Drawing.Point(249, 344);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(100, 33);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "添加";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button5.Location = new System.Drawing.Point(355, 344);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(100, 33);
-            this.button5.TabIndex = 6;
-            this.button5.Text = "修改";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button6.Location = new System.Drawing.Point(461, 344);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(100, 33);
-            this.button6.TabIndex = 6;
-            this.button6.Text = "删除";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
             // Health
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(779, 389);
             this.ControlBox = false;
-            this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.radioButton6);
             this.Controls.Add(this.button2);
@@ -245,10 +223,8 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.RadioButton radioButton6;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.RadioButton radioButton6;
     }
 }
