@@ -38,8 +38,7 @@ namespace CommunityManagement
         {
             try
             {
-                SqlConnection sqlreg = new SqlConnection();
-                sqlreg.ConnectionString = "Data Source=Localhost;Initial Catalog=CommunityManagement;Persist Security Info=True;User ID=sa;Password=123";
+                SqlConnection sqlreg = new SqlConnection(PublicString.Sqlconn);
                 sqlreg.Open();
 
                 SqlCommand regCmd = new SqlCommand($"Select count(*) from [dbo].[userXMJ] where [userid] = '{textBox1.Text.Trim()}'", sqlreg); 

@@ -23,7 +23,7 @@ namespace CommunityManagement
         public static int? value9 = null;
         public static int? value10 = null;
         public static string value11 = null;
-        public static SqlConnection conn = new SqlConnection("Data Source = Localhost; Initial Catalog = CommunityManagement; Persist Security Info = True; User ID = sa; Password = 123");
+        public static SqlConnection conn = new SqlConnection(PublicString.Sqlconn);
         public static SqlCommand cmd = new SqlCommand("select id 身份证号,name 姓名,sex 性别,age 年龄,phone 电话号码,profession 职业,nativity 籍贯,building 楼号,unit 单元号,room 房号,organ 所属团体 from [dbo].[residentXMJ]", conn);
         public static CMResident resident = null;
         public CMResident()

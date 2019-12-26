@@ -19,7 +19,7 @@ namespace CommunityManagement
         public static string value5 = "";
         public static string value6 = "";
         public static int value7;
-        public static SqlConnection conn = new SqlConnection("Data Source = Localhost; Initial Catalog = CommunityManagement; Persist Security Info = True; User ID = sa; Password = 123");
+        public static SqlConnection conn = new SqlConnection(PublicString.Sqlconn);
         public static string connection = "select [dbo].[residentXMJ].id 身份证号,name 姓名,sex 性别,age 年龄,phone 电话号码,profession 职业,nativity 籍贯,building 楼号,unit 单元号,room 房号,organ 所属团体,height 身高,weigh 体重,eyes 视力,bloodpressure 血压,illrecord 病史,breath 肺活量 from [dbo].[healthXMJ] join [dbo].[residentXMJ] on [dbo].[residentXMJ].id = [dbo].[healthXMJ] .id";
         public static SqlCommand cmd = new SqlCommand(connection, conn);
         public Health()

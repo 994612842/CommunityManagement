@@ -17,7 +17,7 @@ namespace CommunityManagement
         public static string value2 = "";
         public static string value3 = "";
         public static string value4 = "";
-        public static SqlConnection conn = new SqlConnection("Data Source = Localhost; Initial Catalog = CommunityManagement; Persist Security Info = True; User ID = sa; Password = 123");
+        public static SqlConnection conn = new SqlConnection(PublicString.Sqlconn);
         public static SqlCommand cmd = new SqlCommand("select eventid 活动序号,eventtime 活动日期,content 活动内容,leader 活动负责人 from [dbo].[cultureEventXMJ]", conn);
         public CultureEvent()
         {

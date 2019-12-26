@@ -17,7 +17,7 @@ namespace CommunityManagement
         public static string value2 = "";
         public static string value3 = "";
         public static string value4 = "";
-        public static SqlConnection conn = new SqlConnection("Data Source = Localhost; Initial Catalog = CommunityManagement; Persist Security Info = True; User ID = sa; Password = 123");
+        public static SqlConnection conn = new SqlConnection(PublicString.Sqlconn);
         public static SqlCommand cmd = new SqlCommand("select safeid 治安记录编号,safetime 日期,situation 治安情况,leader 负责人 from [dbo].[communitySafetyXMJ]", conn);
         public CommunitySafety()
         {

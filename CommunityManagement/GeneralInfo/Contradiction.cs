@@ -17,7 +17,7 @@ namespace CommunityManagement
         public static string value2 = "";
         public static string value3 = "";
         public static string value4 = "";
-        public static SqlConnection conn = new SqlConnection("Data Source = Localhost; Initial Catalog = CommunityManagement; Persist Security Info = True; User ID = sa; Password = 123");
+        public static SqlConnection conn = new SqlConnection(PublicString.Sqlconn);
         public static SqlCommand cmd = new SqlCommand("select contraid 纠纷记录编号,contratime 调解日期,situation 纠纷内容及调解情况,leader 调解负责人 from [dbo].[contradictionXMJ]", conn);
         public Contradiction()
         {

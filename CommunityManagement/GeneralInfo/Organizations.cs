@@ -13,7 +13,7 @@ namespace CommunityManagement
 {
     public partial class Organizations : Form
     {
-        public static SqlConnection conn = new SqlConnection("Data Source = Localhost; Initial Catalog = CommunityManagement; Persist Security Info = True; User ID = sa; Password = 123");
+        public static SqlConnection conn = new SqlConnection(PublicString.Sqlconn);
         public static SqlCommand cmd = new SqlCommand("select organid 团体编号,name 团体名称,intro 团体简介,activity 活动,leader 负责人 from [dbo].[organizationXMJ]", conn);
         public static string value0 = "";
         public static string value1 = "";

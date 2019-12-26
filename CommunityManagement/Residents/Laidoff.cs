@@ -12,7 +12,7 @@ namespace CommunityManagement
 {
     public partial class Laidoff : Form
     {
-        public static SqlConnection conn = new SqlConnection("Data Source = Localhost; Initial Catalog = CommunityManagement; Persist Security Info = True; User ID = sa; Password = 123");
+        public static SqlConnection conn = new SqlConnection(PublicString.Sqlconn);
         public static string connection = "select residentXMJ.id 身份证号,name 姓名,sex 性别,age 年龄,phone 电话号码,profession 职业,nativity 籍贯,building 楼号,unit 单元号,room 房号,unemploytime 下岗日期,trainrecord 上岗培训记录,allowance 生活保障金发放 from unemploymentXMJ JOIN residentXMJ ON residentXMJ.id = unemploymentXMJ.id";
         public static SqlCommand cmd = new SqlCommand(connection, conn);
 
