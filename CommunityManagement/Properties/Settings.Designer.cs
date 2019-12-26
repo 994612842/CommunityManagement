@@ -22,15 +22,5 @@ namespace CommunityManagement.Properties {
                 return defaultInstance;
             }
         }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source = Localhost; Initial Catalog = CommunityManagement; Persist Security " +
-            "Info = True; User ID = sa; Password = 123")]
-        public string ConnectionStrings {
-            get {
-                return ((string)(this["ConnectionStrings"]));
-            }
-        }
     }
 }

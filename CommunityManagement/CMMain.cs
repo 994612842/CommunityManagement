@@ -22,7 +22,11 @@ namespace CommunityManagement
         {
             Application.Exit();
         }
-
+        /// <summary>
+        /// 退出
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button7_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -52,6 +56,11 @@ namespace CommunityManagement
         }
 
         //打印报表
+        /// <summary>
+        /// 打开打印报表窗口
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button6_Click(object sender, EventArgs e)
         {
             CMPrinter.Printer = new CMPrinter();

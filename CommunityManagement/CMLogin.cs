@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using CMMethod;
+using System.Configuration;
+
 namespace CommunityManagement
 {
     public enum status
@@ -16,7 +17,8 @@ namespace CommunityManagement
         SqlConnected,
         SqlConnectFaile
     }
-    
+
+
     public partial class CMLogin : Form
     {
         useridentity user;
@@ -29,8 +31,8 @@ namespace CommunityManagement
             InitializeComponent();
             mLogin = this;
         }
-        //程序退出确认
-        private void CMLogin_FormClosing(object sender, FormClosingEventArgs e)
+        //程序退出确认e
+        private void CMLogin_FormClosing(object snder, FormClosingEventArgs e)
         {
             if (MessageBox.Show("确定要退出吗?", "关闭确认", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
             {
@@ -61,12 +63,13 @@ namespace CommunityManagement
         //登录
         private void button1_Click(object sender, EventArgs e)
         {
-            SqlConnection sqlLogin = new SqlConnection();
-            sqlLogin.ConnectionString = "Data Source = Localhost; Initial Catalog = CommunityManagement; Persist Security Info = True; User ID = sa; Password = 123";
-            sqlLogin.Open();
-            SqlCommand sqlCmd = new SqlCommand($"Select count(*) from userXMJ where userid = '{Login_UserName.Text.Trim()}' and userpassword = '{Login_Password.Text.Trim()}'", sqlLogin);
+            //sqlLogin.ConnectionString = "Data Source = Localhost; Initial Catalog = CommunityManagement; Persist Security Info = True; User ID = sa; Password = 123";
+            SqlConnection sql = new SqlConnection(PublicString.Sqlconn);
+            sql.Open();
+            SqlCommand sqlCmd = new SqlCommand($"Select count(*) from userXMJ where userid = '{Login_UserName.Text.Trim()}' and userpassword = '{Login_Password.Text.Trim()}'", sql);
             DataSet ds = new DataSet();
-            SqlDataAdapter da = new SqlDataAdapter();
+            SqlDataAdapter da = new SqlDataAdapter(sqlCmd);
+            da.Fill(ds);
 
             if (Login_Password.Text.Trim() == "" || Login_UserName.Text.Trim() == "")
             {
@@ -84,8 +87,9 @@ namespace CommunityManagement
             }
             else
             {
-                da.SelectCommand = new SqlCommand($"Select useridentity from userXMJ where userid = '{Login_UserName.Text.Trim()}' and userpassword = '{Login_Password.Text.Trim()}'", sqlLogin);
+                da.SelectCommand = new SqlCommand($"Select useridentity from userXMJ where userid = '{Login_UserName.Text.Trim()}' and userpassword = '{Login_Password.Text.Trim()}'", sql);//userXMJ
                 da.Fill(ds);
+                sql.Close();
 
                 identity = ds.Tables[0].Rows[0].ItemArray[0].ToString();
                 CurrentUser = Login_UserName.Text.Trim();
