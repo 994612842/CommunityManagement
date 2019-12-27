@@ -140,6 +140,7 @@
             this.Controls.Add(this.Login_UserName);
             this.Controls.Add(this.Login_User);
             this.Name = "CMLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "社区管理系统-登录";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CMLogin_FormClosing);
             this.Load += new System.EventHandler(this.CMLogin_Load);

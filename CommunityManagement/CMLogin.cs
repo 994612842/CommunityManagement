@@ -23,7 +23,7 @@ namespace CommunityManagement
     {
         useridentity user;
         public static string CurrentUser;
-        public static CMLogin mLogin = null;
+        public static CMLogin mLogin;
         public static string identity;
         public status sqlstatus = status.SqlConnecting;
         public CMLogin()
@@ -40,6 +40,7 @@ namespace CommunityManagement
             }
             else
             {
+                CMMain.main = new CMMain();
                 e.Cancel = true;
                 this.Show();
                 CMMain.main.Close();
@@ -47,17 +48,12 @@ namespace CommunityManagement
         }
         private void CMLogin_Load(object sender, EventArgs e)
         {
-            switch(sqlstatus)
+            PublicString publicString = new PublicString();
+            Config cfg = new Config();
+            if (cfg.Read(publicString))
             {
-                case status.SqlConnecting:
-                    textBox1.Text = "连接Sql数据库中...";
-                    break;
-                case status.SqlConnected:
-                    textBox1.Text = "Sql数据库连接成功!";
-                    break;
-                case status.SqlConnectFaile:
-                    textBox1.Text = "Sql数据库连接失败!";
-                    break;
+                DbSwitch.firstRun = new DbSwitch();
+                DbSwitch.firstRun.ShowDialog();
             }
         }
         //登录

@@ -62,6 +62,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DbSwitch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DbSwitch.Designer.cs">
+      <DependentUpon>DbSwitch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DisableMod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DisableMod.Designer.cs">
+      <DependentUpon>DisableMod.cs</DependentUpon>
+    </Compile>
     <Compile Include="Residents\ResidentAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -264,6 +276,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CMSysMaintained.resx">
       <DependentUpon>CMSysMaintained.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DbSwitch.resx">
+      <DependentUpon>DbSwitch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DisableMod.resx">
+      <DependentUpon>DisableMod.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GeneralInfo\CultureEvents\Add.resx">
       <DependentUpon>Add.cs</DependentUpon>
