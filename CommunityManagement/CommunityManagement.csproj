@@ -11,6 +11,21 @@
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,8 +48,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Messaging" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,71 +62,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CivilAffairs\DisabledInfo.cs">
+    <Compile Include="DbSwitch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CivilAffairs\DisabledInfo.Designer.cs">
-      <DependentUpon>DisabledInfo.cs</DependentUpon>
+    <Compile Include="DbSwitch.Designer.cs">
+      <DependentUpon>DbSwitch.cs</DependentUpon>
     </Compile>
-    <Compile Include="Comprehensive\Disputes.cs">
+    <Compile Include="DisableMod.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Comprehensive\Disputes.Designer.cs">
-      <DependentUpon>Disputes.cs</DependentUpon>
+    <Compile Include="DisableMod.Designer.cs">
+      <DependentUpon>DisableMod.cs</DependentUpon>
     </Compile>
-    <Compile Include="SystemMaintained\PwdUpdate.cs">
+    <Compile Include="Residents\ResidentAdd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SystemMaintained\PwdUpdate.Designer.cs">
-      <DependentUpon>PwdUpdate.cs</DependentUpon>
+    <Compile Include="Residents\ResidentAdd.Designer.cs">
+      <DependentUpon>ResidentAdd.cs</DependentUpon>
     </Compile>
-    <Compile Include="SystemMaintained\SysSetting.cs">
+    <Compile Include="Residents\AddANDMod.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SystemMaintained\SysSetting.Designer.cs">
-      <DependentUpon>SysSetting.cs</DependentUpon>
+    <Compile Include="Residents\AddANDMod.Designer.cs">
+      <DependentUpon>AddANDMod.cs</DependentUpon>
     </Compile>
-    <Compile Include="SystemMaintained\ShowUsers.cs">
+    <Compile Include="CMPrinter.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SystemMaintained\ShowUsers.Designer.cs">
-      <DependentUpon>ShowUsers.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SystemMaintained\DelUser.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SystemMaintained\DelUser.Designer.cs">
-      <DependentUpon>DelUser.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GeneralInfo\CitizenManage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GeneralInfo\CitizenManage.Designer.cs">
-      <DependentUpon>CitizenManage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CMCivilAffairs.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CMCivilAffairs.Designer.cs">
-      <DependentUpon>CMCivilAffairs.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CMComprehensive.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CMComprehensive.Designer.cs">
-      <DependentUpon>CMComprehensive.cs</DependentUpon>
+    <Compile Include="CMPrinter.Designer.cs">
+      <DependentUpon>CMPrinter.cs</DependentUpon>
     </Compile>
     <Compile Include="CMGeneralInfo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CMGeneralInfo.Designer.cs">
       <DependentUpon>CMGeneralInfo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GeneralInfo\Info.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GeneralInfo\Info.Designer.cs">
-      <DependentUpon>Info.cs</DependentUpon>
     </Compile>
     <Compile Include="CMLogin.cs">
       <SubType>Form</SubType>
@@ -123,23 +110,17 @@
     <Compile Include="CMMain.Designer.cs">
       <DependentUpon>CMMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="CMPrint.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CMPrint.Designer.cs">
-      <DependentUpon>CMPrint.cs</DependentUpon>
-    </Compile>
     <Compile Include="CMRegister.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CMRegister.Designer.cs">
       <DependentUpon>CMRegister.cs</DependentUpon>
     </Compile>
-    <Compile Include="CMService.cs">
+    <Compile Include="CMResident.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CMService.Designer.cs">
-      <DependentUpon>CMService.cs</DependentUpon>
+    <Compile Include="CMResident.Designer.cs">
+      <DependentUpon>CMResident.cs</DependentUpon>
     </Compile>
     <Compile Include="CMSysMaintained.cs">
       <SubType>Form</SubType>
@@ -147,60 +128,102 @@
     <Compile Include="CMSysMaintained.Designer.cs">
       <DependentUpon>CMSysMaintained.cs</DependentUpon>
     </Compile>
-    <Compile Include="CivilAffairs\Groups.cs">
+    <Compile Include="GeneralInfo\CultureEvents\Add.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CivilAffairs\Groups.Designer.cs">
-      <DependentUpon>Groups.cs</DependentUpon>
+    <Compile Include="GeneralInfo\CultureEvents\Add.Designer.cs">
+      <DependentUpon>Add.cs</DependentUpon>
     </Compile>
-    <Compile Include="SystemMaintained\NewUser.cs">
+    <Compile Include="GeneralInfo\Organization\OrganMod.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SystemMaintained\NewUser.Designer.cs">
-      <DependentUpon>NewUser.cs</DependentUpon>
+    <Compile Include="GeneralInfo\Organization\OrganMod.Designer.cs">
+      <DependentUpon>OrganMod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GeneralInfo\Organization\OrganAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GeneralInfo\Organization\OrganAdd.Designer.cs">
+      <DependentUpon>OrganAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Printer\LaidoffSheet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Printer\LaidoffSheet.Designer.cs">
+      <DependentUpon>LaidoffSheet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Printer\Recreational.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Printer\Recreational.Designer.cs">
+      <DependentUpon>Recreational.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubMod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubMod.Designer.cs">
+      <DependentUpon>SubMod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SystemMaintained\PwdChanges.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemMaintained\PwdChanges.Designer.cs">
+      <DependentUpon>PwdChanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Residents\Disables.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Residents\Disables.Designer.cs">
+      <DependentUpon>Disables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GeneralInfo\Contradiction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GeneralInfo\Contradiction.Designer.cs">
+      <DependentUpon>Contradiction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GeneralInfo\CommunitySafety.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GeneralInfo\CommunitySafety.Designer.cs">
+      <DependentUpon>CommunitySafety.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GeneralInfo\CultureEvent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GeneralInfo\CultureEvent.Designer.cs">
+      <DependentUpon>CultureEvent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GeneralInfo\Organizations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GeneralInfo\Organizations.Designer.cs">
+      <DependentUpon>Organizations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Residents\Laidoff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Residents\Laidoff.Designer.cs">
+      <DependentUpon>Laidoff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Residents\Health.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Residents\Health.Designer.cs">
+      <DependentUpon>Health.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Comprehensive\Security.cs">
+    <Compile Include="Residents\Volunteer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Comprehensive\Security.Designer.cs">
-      <DependentUpon>Security.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Printer\RedundantSheet.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Printer\RedundantSheet.Designer.cs">
-      <DependentUpon>RedundantSheet.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Service\Health.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Service\Health.Designer.cs">
-      <DependentUpon>Health.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Service\RecreatAndSport.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Service\RecreatAndSport.Designer.cs">
-      <DependentUpon>RecreatAndSport.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Service\Redundant.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Service\Redundant.Designer.cs">
-      <DependentUpon>Redundant.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Service\Volunteer.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Service\Volunteer.Designer.cs">
+    <Compile Include="Residents\Volunteer.Designer.cs">
       <DependentUpon>Volunteer.cs</DependentUpon>
     </Compile>
-    <Compile Include="CivilAffairs\Subsistence.cs">
+    <Compile Include="Residents\Subsistence.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CivilAffairs\Subsistence.Designer.cs">
+    <Compile Include="Residents\Subsistence.Designer.cs">
       <DependentUpon>Subsistence.cs</DependentUpon>
     </Compile>
     <Compile Include="Printer\SubsistenceSheet.cs">
@@ -209,50 +232,35 @@
     <Compile Include="Printer\SubsistenceSheet.Designer.cs">
       <DependentUpon>SubsistenceSheet.cs</DependentUpon>
     </Compile>
-    <Compile Include="Printer\SportSheet.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Printer\SportSheet.Designer.cs">
-      <DependentUpon>SportSheet.cs</DependentUpon>
-    </Compile>
     <Compile Include="Printer\VolunteerSheet.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Printer\VolunteerSheet.Designer.cs">
       <DependentUpon>VolunteerSheet.cs</DependentUpon>
     </Compile>
-    <Compile Include="SystemMaintained\UpdateUser.cs">
+    <Compile Include="SystemMaintained\Settings.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SystemMaintained\UpdateUser.Designer.cs">
-      <DependentUpon>UpdateUser.cs</DependentUpon>
+    <Compile Include="SystemMaintained\Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="CivilAffairs\DisabledInfo.resx">
-      <DependentUpon>DisabledInfo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CivilAffairs\Groups.resx">
-      <DependentUpon>Groups.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CivilAffairs\Subsistence.resx">
-      <DependentUpon>Subsistence.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Comprehensive\Disputes.resx">
-      <DependentUpon>Disputes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GeneralInfo\CitizenManage.resx">
-      <DependentUpon>CitizenManage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CMCivilAffairs.resx">
-      <DependentUpon>CMCivilAffairs.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CMComprehensive.resx">
-      <DependentUpon>CMComprehensive.cs</DependentUpon>
+    <Compile Include="SystemMaintained\UserInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemMaintained\UserInfo.Designer.cs">
+      <DependentUpon>UserInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Residents\VolunteerAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Residents\VolunteerAdd.Designer.cs">
+      <DependentUpon>VolunteerAdd.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CMPrinter.resx">
+      <DependentUpon>CMPrinter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CMGeneralInfo.resx">
       <DependentUpon>CMGeneralInfo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GeneralInfo\Info.resx">
-      <DependentUpon>Info.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CMLogin.resx">
       <DependentUpon>CMLogin.cs</DependentUpon>
@@ -260,38 +268,62 @@
     <EmbeddedResource Include="CMMain.resx">
       <DependentUpon>CMMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CMPrint.resx">
-      <DependentUpon>CMPrint.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="CMRegister.resx">
       <DependentUpon>CMRegister.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CMService.resx">
-      <DependentUpon>CMService.cs</DependentUpon>
+    <EmbeddedResource Include="CMResident.resx">
+      <DependentUpon>CMResident.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CMSysMaintained.resx">
       <DependentUpon>CMSysMaintained.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SystemMaintained\PwdUpdate.resx">
-      <DependentUpon>PwdUpdate.cs</DependentUpon>
+    <EmbeddedResource Include="DbSwitch.resx">
+      <DependentUpon>DbSwitch.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SystemMaintained\SysSetting.resx">
-      <DependentUpon>SysSetting.cs</DependentUpon>
+    <EmbeddedResource Include="DisableMod.resx">
+      <DependentUpon>DisableMod.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SystemMaintained\DelUser.resx">
-      <DependentUpon>DelUser.cs</DependentUpon>
+    <EmbeddedResource Include="GeneralInfo\CultureEvents\Add.resx">
+      <DependentUpon>Add.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SystemMaintained\NewUser.resx">
-      <DependentUpon>NewUser.cs</DependentUpon>
+    <EmbeddedResource Include="GeneralInfo\Organization\OrganMod.resx">
+      <DependentUpon>OrganMod.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Printer\RedundantSheet.resx">
-      <DependentUpon>RedundantSheet.cs</DependentUpon>
+    <EmbeddedResource Include="GeneralInfo\Organization\OrganAdd.resx">
+      <DependentUpon>OrganAdd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Printer\SportSheet.resx">
-      <DependentUpon>SportSheet.cs</DependentUpon>
+    <EmbeddedResource Include="Printer\LaidoffSheet.resx">
+      <DependentUpon>LaidoffSheet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Printer\Recreational.resx">
+      <DependentUpon>Recreational.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Printer\SubsistenceSheet.resx">
+      <DependentUpon>SubsistenceSheet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Printer\VolunteerSheet.resx">
       <DependentUpon>VolunteerSheet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Residents\ResidentAdd.resx">
+      <DependentUpon>ResidentAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Residents\AddANDMod.resx">
+      <DependentUpon>AddANDMod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Residents\Disables.resx">
+      <DependentUpon>Disables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GeneralInfo\CommunitySafety.resx">
+      <DependentUpon>CommunitySafety.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GeneralInfo\Contradiction.resx">
+      <DependentUpon>Contradiction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GeneralInfo\CultureEvent.resx">
+      <DependentUpon>CultureEvent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GeneralInfo\Organizations.resx">
+      <DependentUpon>Organizations.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -301,31 +333,36 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Comprehensive\Security.resx">
-      <DependentUpon>Security.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Service\Health.resx">
+    <EmbeddedResource Include="Residents\Health.resx">
       <DependentUpon>Health.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Service\RecreatAndSport.resx">
-      <DependentUpon>RecreatAndSport.cs</DependentUpon>
+    <EmbeddedResource Include="Residents\Laidoff.resx">
+      <DependentUpon>Laidoff.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Service\Redundant.resx">
-      <DependentUpon>Redundant.cs</DependentUpon>
+    <EmbeddedResource Include="Residents\Subsistence.resx">
+      <DependentUpon>Subsistence.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Service\Volunteer.resx">
+    <EmbeddedResource Include="Residents\Volunteer.resx">
       <DependentUpon>Volunteer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Printer\SubsistenceSheet.resx">
-      <DependentUpon>SubsistenceSheet.cs</DependentUpon>
+    <EmbeddedResource Include="SubMod.resx">
+      <DependentUpon>SubMod.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SystemMaintained\ShowUsers.resx">
-      <DependentUpon>ShowUsers.cs</DependentUpon>
+    <EmbeddedResource Include="SystemMaintained\PwdChanges.resx">
+      <DependentUpon>PwdChanges.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SystemMaintained\UpdateUser.resx">
-      <DependentUpon>UpdateUser.cs</DependentUpon>
+    <EmbeddedResource Include="SystemMaintained\Settings.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SystemMaintained\UserInfo.resx">
+      <DependentUpon>UserInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Residents\VolunteerAdd.resx">
+      <DependentUpon>VolunteerAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -335,6 +372,22 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\方法\CMMethod.csproj">
+      <Project>{1b552576-66c7-4a9e-bda4-d59148e9e797}</Project>
+      <Name>CMMethod</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dog&amp;fish.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

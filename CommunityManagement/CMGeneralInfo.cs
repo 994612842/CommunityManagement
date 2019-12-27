@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using CommunityManagement;
 
 namespace CommunityManagement
 {
@@ -24,13 +25,13 @@ namespace CommunityManagement
             CMMain.main.Show();
         }
 
-        private void 社区概况ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void 社区团体管理ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (Application.OpenForms["CMInfo"] == null)
+            if (Application.OpenForms["Organizations"] == null)
             {
                 foreach (Form open in this.MdiChildren)
                     open.Close();
-                CMInfo info = new CMInfo();
+                Organizations info = new Organizations();
                 info.MdiParent = this;
                 info.Show();
                 info.WindowState = FormWindowState.Maximized;
@@ -41,20 +42,57 @@ namespace CommunityManagement
                     open.Show();
         }
 
-        private void 居民档案管理ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void 社区文体信息管理ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (Application.OpenForms["CMCitizenManage"] == null)
+            if (Application.OpenForms["CultureEvent"] == null)
             {
                 foreach (Form open in this.MdiChildren)
                     open.Close();
-                CMCitizenManage citizenManage = new CMCitizenManage();
-                citizenManage.MdiParent = this;
-                citizenManage.Show();
-                citizenManage.WindowState = FormWindowState.Maximized;
+                CultureEvent culture = new CultureEvent();
+                culture.MdiParent = this;
+                culture.Show();
+                culture.WindowState = FormWindowState.Maximized;
             }
             else
                 foreach (Form open in this.MdiChildren)
                     open.Show();
+        }
+
+        private void 治安管理ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms["CommunitySafety"] == null)
+            {
+                foreach (Form open in this.MdiChildren)
+                    open.Close();
+                CommunitySafety safety = new CommunitySafety();
+                safety.MdiParent = this;
+                safety.Show();
+                safety.WindowState = FormWindowState.Maximized;
+            }
+            else
+                foreach (Form open in this.MdiChildren)
+                    open.Show();
+        }
+
+        private void 纠纷调解管理ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms["Contradiction"] == null)
+            {
+                foreach (Form open in this.MdiChildren)
+                    open.Close();
+                Contradiction contradiction = new Contradiction();
+                contradiction.MdiParent = this;
+                contradiction.Show();
+                contradiction.WindowState = FormWindowState.Maximized;
+            }
+            else
+                foreach (Form open in this.MdiChildren)
+                    open.Show();
+        }
+
+        private void CMGeneralInfo_Load(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "当前登录用户:" + CMLogin.CurrentUser +"          用户类型:" + userSwitch.Getidentity(CMLogin.identity) ;
         }
     }
 }

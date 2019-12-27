@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace CommunityManagement
 {
@@ -16,19 +17,21 @@ namespace CommunityManagement
         SqlConnected,
         SqlConnectFaile
     }
-    
+
     public partial class CMLogin : Form
     {
-        public static CMLogin mLogin = null;
-        public static string username, password,identity;
+        useridentity user;
+        public static string CurrentUser;
+        public static CMLogin mLogin;
+        public static string identity;
         public status sqlstatus = status.SqlConnecting;
         public CMLogin()
         {
             InitializeComponent();
             mLogin = this;
         }
-        //程序退出确认
-        private void CMLogin_FormClosing(object sender, FormClosingEventArgs e)
+        //程序退出确认e
+        private void CMLogin_FormClosing(object snder, FormClosingEventArgs e)
         {
             if (MessageBox.Show("确定要退出吗?", "关闭确认", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
             {
@@ -36,39 +39,33 @@ namespace CommunityManagement
             }
             else
             {
+                CMMain.main = new CMMain();
                 e.Cancel = true;
                 this.Show();
+                CMMain.main.Close();
             }
         }
         private void CMLogin_Load(object sender, EventArgs e)
         {
-            switch(sqlstatus)
+            PublicString publicString = new PublicString();
+            Config cfg = new Config();
+            if (cfg.Read(publicString))
             {
-                case status.SqlConnecting:
-                    textBox1.Text = "连接Sql数据库中...";
-                    break;
-                case status.SqlConnected:
-                    textBox1.Text = "Sql数据库连接成功!";
-                    break;
-                case status.SqlConnectFaile:
-                    textBox1.Text = "Sql数据库连接失败!";
-                    break;
+                DbSwitch.firstRun = new DbSwitch();
+                DbSwitch.firstRun.ShowDialog();
             }
-            
         }
         //登录
         private void button1_Click(object sender, EventArgs e)
         {
-            /*SqlConnection sqldb = new SqlConnection();
-            sqldb.ConnectionString = "";
-            sqldb.Open();
-            string urname="", urpassword="", urtable="", uridentity="";
-            SqlCommand sqlCmd = new SqlCommand($"Select count(*) from {urtable} where {urname} = {Login_UserName.Text.Trim()} and {urpassword} = {Login_Password.Text.Trim()}",sqldb);
+            //sqlLogin.ConnectionString = "Data Source = Localhost; Initial Catalog = CommunityManagement; Persist Security Info = True; User ID = sa; Password = 123";
+            SqlConnection sql = new SqlConnection(PublicString.Sqlconn);
+            sql.Open();
+            SqlCommand sqlCmd = new SqlCommand($"Select count(*) from userXMJ where userid = '{Login_UserName.Text.Trim()}' and userpassword = '{Login_Password.Text.Trim()}'", sql);
+            DataSet ds = new DataSet();
+            SqlDataAdapter da = new SqlDataAdapter(sqlCmd);
+            da.Fill(ds);
 
-            //username = Login_UserName.Text.Trim();
-           // password = Login_Password.Text.Trim();
-            */
-            
             if (Login_Password.Text.Trim() == "" || Login_UserName.Text.Trim() == "")
             {
                 sqlstatus = status.SqlConnectFaile;
@@ -76,16 +73,21 @@ namespace CommunityManagement
                 Login_UserName.Text = "";
                 Login_Password.Text = "";
             }
-            /*else if ((int)sqlCmd.ExecuteScalar()<1)
+            else if ((int)sqlCmd.ExecuteScalar()<1)
             {
                 MessageBox.Show("用户名或密码错误，请重新输入", "找不到匹配用户", MessageBoxButtons.OK);
                 foreach (Control text in this.Controls)
                     if (text.GetType().Name == "TextBox")
                         text.Text = "";
-            }*/
+            }
             else
             {
-                sqlstatus = status.SqlConnected;
+                da.SelectCommand = new SqlCommand($"Select useridentity from userXMJ where userid = '{Login_UserName.Text.Trim()}' and userpassword = '{Login_Password.Text.Trim()}'", sql);//userXMJ
+                da.Fill(ds,"identity");
+                sql.Close();
+
+                identity = ds.Tables["identity"].Rows[0]["useridentity"].ToString();
+                CurrentUser = Login_UserName.Text.Trim();
                 CMMain.main = new CMMain();
                 this.Hide();
                 CMMain.main.Show();

@@ -24,64 +24,17 @@ namespace CommunityManagement
             CMMain.main.Show();
         }
 
-        private void 新建用户ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void 用户管理ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (Application.OpenForms["NewUser"] == null)
+            if (Application.OpenForms["UserInfo"] == null)
             {
                 foreach (Form open in this.MdiChildren)
                     open.Close();
-                NewUser newUser = new NewUser();
-                newUser.MdiParent = this;
-                newUser.Show();
-                newUser.WindowState = FormWindowState.Maximized;
-            }
-            else
-                foreach (Form open in this.MdiChildren)
-                    open.Show();
-        }
+                UserInfo userInfo = new UserInfo();
+                userInfo.MdiParent = this;
+                userInfo.Show();
+                userInfo.WindowState = FormWindowState.Maximized;
 
-        private void 修改用户ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (Application.OpenForms["UpdateUser"] == null)
-            {
-                foreach (Form open in this.MdiChildren)
-                    open.Close();
-                UpdateUser updateUser = new UpdateUser();
-                updateUser.MdiParent = this;
-                updateUser.Show();
-                updateUser.WindowState = FormWindowState.Maximized;
-            }
-            else
-                foreach (Form open in this.MdiChildren)
-                    open.Show();
-        }
-
-        private void 删除用户ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (Application.OpenForms["DelUser"] == null)
-            {
-                foreach (Form open in this.MdiChildren)
-                    open.Close();
-                DelUser delUser = new DelUser();
-                delUser.MdiParent = this;
-                delUser.Show();
-                delUser.WindowState = FormWindowState.Maximized;
-            }
-            else
-                foreach (Form open in this.MdiChildren)
-                    open.Show();
-        }
-
-        private void 显示所有用户ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (Application.OpenForms["ShowUsers"] == null)
-            {
-                foreach (Form open in this.MdiChildren)
-                    open.Close();
-                ShowUsers show = new ShowUsers();
-                show.MdiParent = this;
-                show.Show();
-                show.WindowState = FormWindowState.Maximized;
             }
             else
                 foreach (Form open in this.MdiChildren)
@@ -90,14 +43,15 @@ namespace CommunityManagement
 
         private void 系统设置ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (Application.OpenForms["SysSetting"] == null)
+            if (Application.OpenForms["Settings"] == null)
             {
                 foreach (Form open in this.MdiChildren)
                     open.Close();
-                SysSetting setting = new SysSetting();
-                setting.MdiParent = this;
-                setting.Show();
-                setting.WindowState = FormWindowState.Maximized;
+                Settings settings = new Settings();
+                settings.MdiParent = this;
+                settings.Show();
+                settings.WindowState = FormWindowState.Maximized;
+
             }
             else
                 foreach (Form open in this.MdiChildren)
@@ -106,14 +60,14 @@ namespace CommunityManagement
 
         private void 更改密码ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (Application.OpenForms["PwdUpdate"] == null)
+            if (Application.OpenForms["PwdChanges"] == null)
             {
                 foreach (Form open in this.MdiChildren)
                     open.Close();
-                PwdUpdate pwd = new PwdUpdate();
-                pwd.MdiParent = this;
-                pwd.Show();
-                pwd.WindowState = FormWindowState.Maximized;
+                PwdChanges pwdChanges = new PwdChanges();
+                pwdChanges.MdiParent = this;
+                pwdChanges.Show();
+                pwdChanges.WindowState = FormWindowState.Maximized;
             }
             else
                 foreach (Form open in this.MdiChildren)
