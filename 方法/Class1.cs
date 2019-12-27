@@ -149,7 +149,7 @@ namespace CommunityManagement
         {
             switch(e)
             {
-                case "0":              
+                case "0":
                     return "管理员";
                 case "1":
                     return "普通用户";

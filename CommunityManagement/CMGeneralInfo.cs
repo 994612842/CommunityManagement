@@ -92,7 +92,7 @@ namespace CommunityManagement
 
         private void CMGeneralInfo_Load(object sender, EventArgs e)
         {
-            toolStripStatusLabel1.Text = "当前登录用户:" + CMLogin.CurrentUser + "          用户类型:" + userSwitch.Getidentity(CMLogin.identity) ;
+            toolStripStatusLabel1.Text = "当前登录用户:" + CMLogin.CurrentUser +"          用户类型:" + userSwitch.Getidentity(CMLogin.identity) ;
         }
     }
 }

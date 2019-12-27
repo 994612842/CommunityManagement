@@ -60,10 +60,10 @@ namespace CommunityManagement
                     regAdapter.Fill(regset, "[dbo.[userXMJ]]");
                     if((int)regCmd.ExecuteScalar()<1)//如果为第一个用户，设置为管理员--useridentity为0
                     {
-                        regCmd = new SqlCommand($"insert into [dbo].[userXMJ](userid,userpassword,useridentity) values('{textBox1.Text.Trim()}','{textBox2.Text.Trim()}',0)", sqlreg);
+                        regCmd = new SqlCommand($"insert into [dbo].[userXMJ](userid,userpassword,useridentity) values('{textBox1.Text.Trim()}','{textBox2.Text.Trim()}','0')", sqlreg);
                     }
                     else
-                        regCmd = new SqlCommand($"insert into [dbo].[userXMJ](userid,userpassword) values('{textBox1.Text.Trim()}','{textBox2.Text.Trim()}')", sqlreg);
+                        regCmd = new SqlCommand($"insert into [dbo].[userXMJ](userid,userpassword,useridentity) values('{textBox1.Text.Trim()}','{textBox2.Text.Trim()}','1')", sqlreg);
 
                     regAdapter = new SqlDataAdapter(regCmd);
                     regAdapter.Fill(regset, "[dbo].[userXMJ]");

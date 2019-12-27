@@ -18,7 +18,6 @@ namespace CommunityManagement
         SqlConnectFaile
     }
 
-
     public partial class CMLogin : Form
     {
         useridentity user;
@@ -84,10 +83,10 @@ namespace CommunityManagement
             else
             {
                 da.SelectCommand = new SqlCommand($"Select useridentity from userXMJ where userid = '{Login_UserName.Text.Trim()}' and userpassword = '{Login_Password.Text.Trim()}'", sql);//userXMJ
-                da.Fill(ds);
+                da.Fill(ds,"identity");
                 sql.Close();
 
-                identity = ds.Tables[0].Rows[0].ItemArray[0].ToString();
+                identity = ds.Tables["identity"].Rows[0]["useridentity"].ToString();
                 CurrentUser = Login_UserName.Text.Trim();
                 CMMain.main = new CMMain();
                 this.Hide();
