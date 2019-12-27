@@ -230,6 +230,7 @@
             this.MinimizeBox = false;
             this.Name = "DbSwitch";
             this.Text = "连接数据库";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.DbSwitch_FormClosed);
             this.Load += new System.EventHandler(this.DbSwitch_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.statusStrip1.ResumeLayout(false);

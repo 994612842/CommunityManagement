@@ -117,5 +117,10 @@ namespace CommunityManagement
         {
             Application.Exit();
         }
+
+        private void DbSwitch_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
