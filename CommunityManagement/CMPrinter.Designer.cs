@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CMPrinter));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.低保发放统计表ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.文体活动统计表ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -84,9 +85,11 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "CMPrinter";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "打印报表";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CMPrinter_FormClosed);
             this.menuStrip1.ResumeLayout(false);

@@ -251,6 +251,13 @@ namespace CommunityManagement
 
         private void CMResident_Load(object sender, EventArgs e)
         {
+            if (CMLogin.identity != "0")
+            {
+                button2.Visible = false;
+                button3.Visible = false;
+                button4.Visible = false;
+                button1.Location = new Point(290, 290);
+            }
             button1.PerformClick();
 
         }

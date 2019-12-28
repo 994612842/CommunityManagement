@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CMGeneralInfo));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.社区团体管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.社区文体信息管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -102,9 +103,11 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "CMGeneralInfo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "社区概况";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CMGeneralInfo_FormClosed);
             this.Load += new System.EventHandler(this.CMGeneralInfo_Load);

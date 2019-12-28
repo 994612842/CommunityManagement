@@ -77,16 +77,14 @@ namespace CommunityManagement
                 {
                     if (radioButton1.Checked)
                     {
-                        Config cfg = new Config();
-                        cfg.Write(textBox1.Text.Trim(), textBox2.Text.Trim(), textBox3.Text.Trim(), textBox4.Text.Trim(), publicString);
-                        test.ConnectionString = PublicString.Sqlconn;
+                        test.ConnectionString = $"Data Source={textBox1.Text.Trim()};Initial Catalog={textBox2.Text.Trim()};Persist Security Info=True;User ID={textBox3.Text.Trim()};Password={textBox4.Text.Trim()}";
                         test.Open();
                     }
                     else
                     {
                         Config cfg = new Config();
                         cfg.Write(textBox1.Text.Trim(), textBox2.Text.Trim(), publicString);
-                        test.ConnectionString = PublicString.Sqlconn;
+                        test.ConnectionString = $"Data Source={textBox1.Text.Trim()};Initial Catalog={textBox2.Text.Trim()};Integrated Security = True;";
                         test.Open();
                     }
                 }
@@ -100,12 +98,25 @@ namespace CommunityManagement
                 MessageBox.Show(ex.Message, "Oops", MessageBoxButtons.OK);
             }
         }
-
+        /// <summary>
+        /// 确定
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button3_Click(object sender, EventArgs e)
         {
+            PublicString publicString = new PublicString();
             //CMLogin.mLogin = new CMLogin();
-            this.Close();
-            CMLogin.mLogin.Show();
+            if (radioButton1.Checked)
+            {
+                Config cfg = new Config();
+                cfg.Write(textBox1.Text.Trim(), textBox2.Text.Trim(), textBox3.Text.Trim(), textBox4.Text.Trim(), publicString);
+            }else
+            {
+                Config cfg = new Config();
+                cfg.Write(textBox1.Text.Trim(), textBox2.Text.Trim(), publicString);
+            }
+            //CMLogin.mLogin.Show();
         }
 
         private void DbSwitch_Load(object sender, EventArgs e)
@@ -114,11 +125,6 @@ namespace CommunityManagement
         }
 
         private void button2_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void DbSwitch_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }

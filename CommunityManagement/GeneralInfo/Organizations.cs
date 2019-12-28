@@ -130,10 +130,12 @@ namespace CommunityManagement
             DataSet organ = new DataSet();
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(organ, "[dbo].[organizationXMJ]");
-            if (CMLogin.identity != "0")
+            if (CMLogin.identity != "0")//如不为管理员则隐藏"添加""修改""删除"按钮
             {
-                button4.Visible = false;
+                button2.Visible = false;
                 button3.Visible = false;
+                button4.Visible = false;
+                button1.Location = new Point(293, 319);
             }
             dataGridView1.AutoGenerateColumns = true;
             dataGridView1.DataSource = organ.Tables["[dbo].[organizationXMJ]"];
