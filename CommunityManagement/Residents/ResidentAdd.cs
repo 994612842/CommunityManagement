@@ -77,7 +77,7 @@ namespace CommunityManagement
                     CMResident.value25 = textBox21.Text;
                     CMResident.value26 = textBox22.Text;
                     CMResident.value27 = textBox23.Text;
-                    CMResident.value28 = textBox24.Text;
+                    CMResident.value28 = int.Parse(textBox24.Text);
                 }
                 this.DialogResult = DialogResult.OK;
                 this.Close();
