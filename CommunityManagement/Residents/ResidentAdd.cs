@@ -47,6 +47,38 @@ namespace CommunityManagement
                 else
                     CMResident.value10 = int.Parse(textBox10.Text.Trim());
                 CMResident.value11 = textBox11.Text.Trim();
+                if(checkBox1.Checked)
+                {
+                    CMResident.value12 = textBox12.Text.Trim();
+                    CMResident.value13 = textBox13.Text.Trim();
+                }
+                if(checkBox2.Checked)
+                {
+                    CMResident.value14 = dateTimePicker1.Value.ToString();
+                    CMResident.value15 = textBox3.Text;
+                    CMResident.value16 = textBox14.Text;
+                }
+                if(checkBox3.Checked)
+                {
+                    CMResident.value17 = textBox15.Text;
+                    CMResident.value18 = dateTimePicker2.Value.ToString();
+                    CMResident.value19 = int.Parse(textBox16.Text);
+                }
+                if(checkBox4.Checked)
+                {
+                    CMResident.value20 = comboBox2.SelectedItem.ToString();
+                    CMResident.value21 = textBox17.Text;
+                    CMResident.value22 = textBox18.Text;
+                }
+                if(checkBox5.Checked)
+                {
+                    CMResident.value23 = int.Parse(textBox19.Text);
+                    CMResident.value24 = textBox20.Text;
+                    CMResident.value25 = textBox21.Text;
+                    CMResident.value26 = textBox22.Text;
+                    CMResident.value27 = textBox23.Text;
+                    CMResident.value28 = textBox24.Text;
+                }
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
@@ -83,7 +115,8 @@ namespace CommunityManagement
 
         private void ResidentAdd_FormClosed(object sender, FormClosedEventArgs e)
         {
-            this.DialogResult = DialogResult.Cancel;
+            if (this.DialogResult != DialogResult.OK)
+                this.DialogResult = DialogResult.Cancel;
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -96,6 +129,7 @@ namespace CommunityManagement
                 textBox13.Visible = true;
                 panel1.Width = 189;
                 panel1.Height = 83;
+                CMResident.isVolunt = true;
             }else
             {
                 label12.Visible = false;
@@ -104,6 +138,7 @@ namespace CommunityManagement
                 textBox13.Visible = false;
                 panel1.Width = 84;
                 panel1.Height = 23;
+                CMResident.isVolunt = false;
             }
         }
 
@@ -119,6 +154,7 @@ namespace CommunityManagement
                 textBox14.Visible = true;
                 panel2.Width = 220;
                 panel2.Height = 238;
+                CMResident.isLaid = true;
             }
             else
             {
@@ -130,6 +166,7 @@ namespace CommunityManagement
                 textBox14.Visible = false;
                 panel2.Width = 97;
                 panel2.Height = 31;
+                CMResident.isLaid = false;
             }
         }
 
@@ -146,6 +183,7 @@ namespace CommunityManagement
                 //panel4.Visible = true;
                 panel4.Width = 194;
                 panel4.Height = 118;
+                CMResident.isDisable = true;
             }
             else
             {
@@ -158,6 +196,7 @@ namespace CommunityManagement
                 //panel4.Visible = false;
                 panel4.Width = 83;
                 panel4.Height = 30;
+                CMResident.isDisable = false;
             }
         }
 
@@ -174,6 +213,7 @@ namespace CommunityManagement
                 //panel3.Visible = true;
                 panel3.Width = 210;
                 panel3.Height = 106;
+                CMResident.isSub = true;
             }
             else
             {
@@ -186,6 +226,7 @@ namespace CommunityManagement
                 //panel3.Visible = false;
                 panel3.Width = 97;
                 panel3.Height = 31;
+                CMResident.isSub = false;
             }
         }
 
@@ -199,6 +240,7 @@ namespace CommunityManagement
                 }
                 panel5.Width = 158;
                 panel5.Height = 236;
+                CMResident.isHealth = true;
             }else
             {
                 foreach(Control s in panel5.Controls)
@@ -208,6 +250,7 @@ namespace CommunityManagement
                 checkBox5.Visible = true;
                 panel5.Width = 127;
                 panel5.Height = 30;
+                CMResident.isHealth = false;
             }
         }
     }
