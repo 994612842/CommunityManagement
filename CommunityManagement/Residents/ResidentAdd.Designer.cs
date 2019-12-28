@@ -694,7 +694,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(346, 266);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(346, 66);
             this.tableLayoutPanel1.TabIndex = 35;
             // 
             // panel5
@@ -715,7 +715,7 @@
             this.panel5.Controls.Add(this.checkBox5);
             this.panel5.Location = new System.Drawing.Point(216, 32);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(127, 231);
+            this.panel5.Size = new System.Drawing.Size(127, 30);
             this.panel5.TabIndex = 35;
             // 
             // textBox24
@@ -844,6 +844,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(688, 431);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.comboBox1);

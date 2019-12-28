@@ -81,7 +81,7 @@ namespace CommunityManagement
         /// <summary>
         /// 低保金额
         /// </summary>
-        public static int? value19 = 0;
+        public static int value19 = 0;
         /// <summary>
         /// 残疾类型
         /// </summary>
@@ -297,41 +297,49 @@ namespace CommunityManagement
                     da = new SqlDataAdapter($"insert into [dbo].[residentXMJ](id,name,sex,age,phone,profession,nativity,building,unit,room,organ) values('{value1}', '{value2}', '{value3.Trim()}', '{value4}','{value5.Trim()}', '{value6.Trim()}', '{value7.Trim()}', '{value8}', '{value9}', '{value10}', '{value11.Trim()}')", conn);
                     da.Fill(ds, "[dbo].[residentXMJ]");
                     da.Update(ds, "[dbo].[residentXMJ]");
+                    //志愿者信息
                     if(isVolunt)
                     {
                         da = new SqlDataAdapter("select * from volunteerXMJ", conn);
                         da.Fill(ds, "volunteerXMJ");
-                        da = new SqlDataAdapter($"insert into [dbo].[volunteerXMJ](id,servetime,serverecord) values( '{value1}','{value12}','{value13}')", conn);
+                        da = new SqlDataAdapter($"insert into [dbo].[volunteerXMJ](id,servetime,serverecord) values('{value1}','{value12}','{value13}')", conn);
                         da.Fill(ds, "volunteerXMJ");
                         da.Update(ds, "volunteerXMJ");
                     }
+                    //下岗信息
                     if(isLaid)
                     {
                         da = new SqlDataAdapter("select * from unemploymentXMJ",conn);
                         da.Fill(ds, "unemploymentXMJ");
                         da = new SqlDataAdapter($"insert into unemploymentXMJ(id,unemploytime,trainrecord,allowance) values('{value1}','{value14}','{value15}','{value16}')",conn);
+                        da.Fill(ds, "lowincomeXMJ");
                         da.Update(ds, "unemploymentXMJ");
                     }
+                    //低保信息
                     if(isSub)
                     {
                         da = new SqlDataAdapter("select * from lowincomeXMJ", conn);
                         da.Fill(ds, "lowincomeXMJ");
                         da = new SqlDataAdapter($"insert into lowincomeXMJ(id,cardid,sendtime,allowance) values('{value1}','{value17}','{value18}','{value19}')",conn);
+                        da.Fill(ds, "lowincomeXMJ");
                         da.Update(ds,"lowincomeXMJ");
                     }
+                    //残疾信息
                     if(isDisable)
                     {
                         da = new SqlDataAdapter("select * from disabilityXMJ", conn);
                         da.Fill(ds, "disabilityXMJ");
                         da = new SqlDataAdapter($"insert into disabilityXMJ(id,disabletype,reablerecord,allowance) values('{value1}','{value20}','{value21}','{value22}')",conn);
-                        da.Fill(ds,"disabilityXMJ");
+                        da.Fill(ds, "disabilityXMJ");
                         da.Update(ds,"disabilityXMJ");
                     }
+                    //健康信息
                     if(isHealth)
                     {
                         da = new SqlDataAdapter("select * from healthXMJ", conn);
                         da.Fill(ds,"healthXMJ");
                         da = new SqlDataAdapter($"insert into healthXMJ(id,height,weigh,eyes,bloodpressure,illrecord,breath) values('{value1}','{value23}','{value24}','{value25}','{value26}','{value27}','{value28}')", conn);
+                        da.Fill(ds, "lowincomeXMJ");
                         da.Update(ds, "healthXMJ");
                     }
                     button1.PerformClick();

@@ -47,37 +47,42 @@ namespace CommunityManagement
                 else
                     CMResident.value10 = int.Parse(textBox10.Text.Trim());
                 CMResident.value11 = textBox11.Text.Trim();
+                //志愿者信息
                 if(checkBox1.Checked)
                 {
                     CMResident.value12 = textBox12.Text.Trim();
                     CMResident.value13 = textBox13.Text.Trim();
                 }
+                //下岗职工信息
                 if(checkBox2.Checked)
                 {
-                    CMResident.value14 = dateTimePicker1.Value.ToString();
+                    CMResident.value14 = dateTimePicker1.Value.ToString("yyyy-MM-dd");
                     CMResident.value15 = textBox3.Text;
                     CMResident.value16 = textBox14.Text;
                 }
+                //低保信息
                 if(checkBox3.Checked)
                 {
                     CMResident.value17 = textBox15.Text;
-                    CMResident.value18 = dateTimePicker2.Value.ToString();
-                    CMResident.value19 = int.Parse(textBox16.Text);
+                    CMResident.value18 = dateTimePicker2.Value.ToString("yyyy-MM-dd");
+                    CMResident.value19 = int.Parse(textBox16.Text.Trim());
                 }
+                //残疾信息
                 if(checkBox4.Checked)
                 {
                     CMResident.value20 = comboBox2.SelectedItem.ToString();
                     CMResident.value21 = textBox17.Text;
                     CMResident.value22 = textBox18.Text;
                 }
+                //健康信息
                 if(checkBox5.Checked)
                 {
-                    CMResident.value23 = int.Parse(textBox19.Text);
+                    CMResident.value23 = int.Parse(textBox19.Text.Trim());
                     CMResident.value24 = textBox20.Text;
                     CMResident.value25 = textBox21.Text;
                     CMResident.value26 = textBox22.Text;
                     CMResident.value27 = textBox23.Text;
-                    CMResident.value28 = int.Parse(textBox24.Text);
+                    CMResident.value28 = int.Parse(textBox24.Text.Trim());
                 }
                 this.DialogResult = DialogResult.OK;
                 this.Close();
