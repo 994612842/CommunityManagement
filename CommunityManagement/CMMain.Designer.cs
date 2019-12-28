@@ -99,6 +99,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "CMMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "社区管理系统";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CMMain_FormClosed);
             this.ResumeLayout(false);

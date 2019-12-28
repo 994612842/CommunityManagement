@@ -12,19 +12,20 @@ namespace CommunityManagement
 {
     public partial class CMResident : Form
     {
-        public static string value1 = null;
-        public static string value2 = null;
-        public static string value3 = null;
-        public static short? value4 = null;
-        public static string value5 = null;
-        public static string value6 = null;
-        public static string value7 = null;
-        public static int? value8 = null;
-        public static int? value9 = null;
-        public static int? value10 = null;
-        public static string value11 = null;
+        public static string value1 = "";
+        public static string value2 = "";
+        public static string value3 = "";
+        public static short? value4 = 0;
+        public static string value5 = "";
+        public static string value6 = "";
+        public static string value7 = "";
+        public static int? value8 = 0;
+        public static int? value9 = 0;
+        public static int? value10 = 0;
+        public static string value11 = "";
         public static SqlConnection conn = new SqlConnection(PublicString.Sqlconn);
-        public static SqlCommand cmd = new SqlCommand("select id 身份证号,name 姓名,sex 性别,age 年龄,phone 电话号码,profession 职业,nativity 籍贯,building 楼号,unit 单元号,room 房号,organ 所属团体 from [dbo].[residentXMJ]", conn);
+        public static string connection = "select id 身份证号,name 姓名,sex 性别,age 年龄,phone 电话号码,profession 职业,nativity 籍贯,building 楼号,unit 单元号,room 房号,organ 所属团体 from [dbo].[residentXMJ]";
+        public static SqlCommand cmd = new SqlCommand(connection, conn);
         public static CMResident resident = null;
         public CMResident()
         {
@@ -34,6 +35,7 @@ namespace CommunityManagement
 
         private void 居民健康档案ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            panel1.Visible = false;
             this.dataGridView1.Visible = false;
             this.button1.Visible = false;
             this.button2.Visible = false;
@@ -56,6 +58,7 @@ namespace CommunityManagement
 
         private void 社区志愿者信息管理ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            panel1.Visible = false;
             this.dataGridView1.Visible = false;
             this.button1.Visible = false;
             this.button2.Visible = false;
@@ -78,6 +81,7 @@ namespace CommunityManagement
 
         private void 下岗职工管理ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            panel1.Visible = false;
             this.dataGridView1.Visible = false;
             this.button1.Visible = false;
             this.button2.Visible = false;
@@ -100,6 +104,7 @@ namespace CommunityManagement
 
         private void 低保管理ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            panel1.Visible = false;
             this.dataGridView1.Visible = false;
             this.button1.Visible = false;
             this.button2.Visible = false;
@@ -122,6 +127,7 @@ namespace CommunityManagement
 
         private void 残疾人管理ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            panel1.Visible = false;
             this.dataGridView1.Visible = false;
             this.button1.Visible = false;
             this.button2.Visible = false;
@@ -175,7 +181,11 @@ namespace CommunityManagement
                 conn.Close();
             }
         }
-        //添加
+        /// <summary>
+        /// 添加居民
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
             try
@@ -187,19 +197,17 @@ namespace CommunityManagement
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(ds, "[dbo].[residentXMJ]");
                 add.ShowDialog();
-                if (value1 != "")
+                if (add.DialogResult != DialogResult.Cancel)
                 {
                     da = new SqlDataAdapter($"insert into [dbo].[residentXMJ](id,name,sex,age,phone,profession,nativity,building,unit,room,organ) values('{value1}', '{value2}', '{value3.Trim()}', '{value4}','{value5.Trim()}', '{value6.Trim()}', '{value7.Trim()}', '{value8}', '{value9}', '{value10}', '{value11.Trim()}')", conn);
                     da.Fill(ds, "[dbo].[residentXMJ]");
                     da.Update(ds, "[dbo].[residentXMJ]");
                     button1.PerformClick();
                 }
-                else
-                    MessageBox.Show("必要信息未填写,不做任何更改.", "一个错误", MessageBoxButtons.OK);
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message + value1+value2, "Oops!", MessageBoxButtons.OK);
+                MessageBox.Show(ex.Message, "Oops!", MessageBoxButtons.OK);
             }
             finally
             {
@@ -209,6 +217,7 @@ namespace CommunityManagement
 
         private void 关闭所有ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            panel1.Visible = true;
             foreach (Form open in this.MdiChildren)
                 open.Close();
             this.dataGridView1.Visible = true;
@@ -281,6 +290,67 @@ namespace CommunityManagement
                     del.Update(ds, "[dbo].[residentXMJ]");
                     button1.PerformClick();
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Oops", MessageBoxButtons.OK);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+        /// <summary>
+        /// 精确查询
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button5_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (conn.State != ConnectionState.Open)
+                    conn.Open();
+                DataSet ds = new DataSet();
+                SqlCommand find = new SqlCommand();
+                if (radioButton1.Checked == true)
+                    find.CommandText = connection + $" where [dbo].[residentXMJ].id = '{textBox1.Text.Trim()}'";
+                else if (radioButton2.Checked == true)
+                    find.CommandText = connection + $" where name = '{textBox1.Text.Trim()}'";
+                find.Connection = conn;
+                SqlDataAdapter da = new SqlDataAdapter(find);
+                da.Fill(ds, "[dbo].[residentXMJ]");
+                dataGridView1.AutoGenerateColumns = true;
+                dataGridView1.DataSource = ds.Tables["[dbo].[residentXMJ]"];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Oops", MessageBoxButtons.OK);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (conn.State != ConnectionState.Open)
+                    conn.Open();
+                DataSet ds = new DataSet();
+                SqlCommand find = new SqlCommand();
+                if (radioButton1.Checked == true)
+                    find.CommandText = connection + $" where [dbo].[residentXMJ].id like '%{textBox1.Text.Trim()}%'";
+                else if (radioButton2.Checked == true)
+                    find.CommandText = connection + $" where name like '%{textBox1.Text.Trim()}%'";
+                find.Connection = conn;
+                SqlDataAdapter da = new SqlDataAdapter(find);
+                da.Fill(ds, "[dbo].[residentXMJ]");
+                dataGridView1.AutoGenerateColumns = true;
+                dataGridView1.DataSource = ds.Tables["[dbo].[residentXMJ]"];
             }
             catch (Exception ex)
             {

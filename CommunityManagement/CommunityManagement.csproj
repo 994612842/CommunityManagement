@@ -68,10 +68,10 @@
     <Compile Include="DbSwitch.Designer.cs">
       <DependentUpon>DbSwitch.cs</DependentUpon>
     </Compile>
-    <Compile Include="DisableMod.cs">
+    <Compile Include="Residents\DisableMod.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DisableMod.Designer.cs">
+    <Compile Include="Residents\DisableMod.Designer.cs">
       <DependentUpon>DisableMod.cs</DependentUpon>
     </Compile>
     <Compile Include="Residents\ResidentAdd.cs">
@@ -280,7 +280,7 @@
     <EmbeddedResource Include="DbSwitch.resx">
       <DependentUpon>DbSwitch.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DisableMod.resx">
+    <EmbeddedResource Include="Residents\DisableMod.resx">
       <DependentUpon>DisableMod.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GeneralInfo\CultureEvents\Add.resx">

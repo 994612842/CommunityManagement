@@ -241,7 +241,9 @@
         }
 
         #endregion
-
+        /// <summary>
+        /// 身份证号
+        /// </summary>
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
