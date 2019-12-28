@@ -79,6 +79,11 @@ namespace CommunityManagement
 
         private void Disables_Load(object sender, EventArgs e)
         {
+            if (CMLogin.identity != "0")
+            {
+                button5.Visible = false;
+                button3.Location = new Point(337, 337);
+            }
             button3.PerformClick();
         }
 
@@ -123,6 +128,9 @@ namespace CommunityManagement
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Oops", MessageBoxButtons.OK);
+            }finally
+            {
+                conn.Close();
             }
         }
 
@@ -145,7 +153,7 @@ namespace CommunityManagement
                     value4 = dataGridView1.CurrentRow.Cells["补贴发放记录"].Value.ToString();
                     value5 = dataGridView1.CurrentRow.Cells["残疾类型"].Value.ToString();
                     mod2.ShowDialog();
-                    if (mod2.DialogResult != DialogResult.Cancel)
+                    if (mod2.DialogResult == DialogResult.OK)
                     {
                         SqlCommand mod = new SqlCommand($"update disabilityXMJ set disabletype = '{value5}',reablerecord = '{value3}',allowance = '{value4}' where id = '{value1}'", conn);
                         da = new SqlDataAdapter(mod);

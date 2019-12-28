@@ -15,5 +15,29 @@ namespace CommunityManagement
         {
             InitializeComponent();
         }
+
+        private void UserInfo_Load(object sender, EventArgs e)
+        {
+            textBox1.Text = CMLogin.CurrentUser;
+            textBox2.Text = userSwitch.Getidentity(CMLogin.identity);
+            if(CMLogin.identity != "0")
+            {
+                button1.Visible = false;
+            }else
+            {
+                button1.Visible = true;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AllUsers users = new AllUsers();
+            users.ShowDialog();
+        }
+
+        private void UserInfo_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            CMSysMaintained.maintained.Show();
+        }
     }
 }

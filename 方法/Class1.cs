@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Data;
 using System.Configuration;
+
 
 namespace CommunityManagement
 {
@@ -68,36 +70,6 @@ namespace CommunityManagement
                 return true;
             else
                 return false;
-
-            //读：
-            //string s = ConfigurationManager.AppSettings["y"];
-            // 加：
-            //Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-            //AppSettingsSection app = config.AppSettings;
-            //app.Settings.Add("x", "this is X");
-            //config.Save(ConfigurationSaveMode.Modified);
-            //修改：
-            //Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-            //AppSettingsSection app = config.AppSettings;
-            //app.Settings.Add("x", "this is X");
-            //app.Settings["x"].Value = "this is not Y"; 
-            //config.Save(ConfigurationSaveMode.Modified);
-            // 删除：
-            //Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-            //AppSettingsSection app = config.AppSettings;
-            //app.Settings.Remove("x");
-            //config.Save(ConfigurationSaveMode.Modified);
-
-            //将用户的输入的配置更新保存到App.config
-
-            //Configuration cfa = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-            //cfa.AppSettings.Settings["first_run"].Value = "False";
-            //cfa.AppSettings.Settings["server"].Value = server;
-            //cfa.AppSettings.Settings["database"].Value = database;
-            //cfa.AppSettings.Settings["uid"].Value = uid;
-            //cfa.AppSettings.Settings["pwd"].Value = pwd;
-            //cfa.Save();
-            //ConfigurationManager.RefreshSection("appSettings");
         }
         /// <summary>
         /// 使用SQL server 身份验证登录到服务器

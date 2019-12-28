@@ -11,20 +11,12 @@ using System.Configuration;
 
 namespace CommunityManagement
 {
-    public enum status
-    {
-        SqlConnecting,
-        SqlConnected,
-        SqlConnectFaile
-    }
 
     public partial class CMLogin : Form
     {
-        useridentity user;
         public static string CurrentUser;
         public static CMLogin mLogin;
         public static string identity;
-        public status sqlstatus = status.SqlConnecting;
         public CMLogin()
         {
             InitializeComponent();
@@ -39,10 +31,13 @@ namespace CommunityManagement
             }
             else
             {
-                CMMain.main = new CMMain();
+                if (Application.OpenForms == null)
+                {
+                    CMMain.main = new CMMain();
+                    this.Show();
+                }
                 e.Cancel = true;
-                this.Show();
-                CMMain.main.Close();
+                //CMMain.main.Close();
             }
         }
         private void CMLogin_Load(object sender, EventArgs e)
@@ -53,12 +48,16 @@ namespace CommunityManagement
             {
                 DbSwitch.firstRun = new DbSwitch();
                 DbSwitch.firstRun.ShowDialog();
+                if(DbSwitch.firstRun.DialogResult == DialogResult.OK)
+                {
+                    this.Show() ;
+
+                }
             }
         }
         //登录
         private void button1_Click(object sender, EventArgs e)
         {
-            //sqlLogin.ConnectionString = "Data Source = Localhost; Initial Catalog = CommunityManagement; Persist Security Info = True; User ID = sa; Password = 123";
             SqlConnection sql = new SqlConnection(PublicString.Sqlconn);
             sql.Open();
             SqlCommand sqlCmd = new SqlCommand($"Select count(*) from userXMJ where userid = '{Login_UserName.Text.Trim()}' and userpassword = '{Login_Password.Text.Trim()}'", sql);
@@ -68,17 +67,12 @@ namespace CommunityManagement
 
             if (Login_Password.Text.Trim() == "" || Login_UserName.Text.Trim() == "")
             {
-                sqlstatus = status.SqlConnectFaile;
                 MessageBox.Show("用户名或密码不能为空", "登录提示", MessageBoxButtons.OK);
-                Login_UserName.Text = "";
-                Login_Password.Text = "";
             }
             else if ((int)sqlCmd.ExecuteScalar()<1)
             {
                 MessageBox.Show("用户名或密码错误，请重新输入", "找不到匹配用户", MessageBoxButtons.OK);
-                foreach (Control text in this.Controls)
-                    if (text.GetType().Name == "TextBox")
-                        text.Text = "";
+                Login_Password.Text = "";
             }
             else
             {
