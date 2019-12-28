@@ -34,7 +34,9 @@
             this.文体活动统计表ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.社区志愿者统计表ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.下岗人员统计表ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -78,12 +80,24 @@
             this.下岗人员统计表ToolStripMenuItem.Text = "下岗人员统计表";
             this.下岗人员统计表ToolStripMenuItem.Click += new System.EventHandler(this.下岗人员统计表ToolStripMenuItem_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::CommunityManagement.Properties.Resources.v2_c61845d4fa724c17b39b388aa4d3bf2a_1200x500;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 25);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(800, 425);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            // 
             // CMPrinter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
@@ -94,6 +108,7 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CMPrinter_FormClosed);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -106,5 +121,6 @@
         private System.Windows.Forms.ToolStripMenuItem 文体活动统计表ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 社区志愿者统计表ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 下岗人员统计表ToolStripMenuItem;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

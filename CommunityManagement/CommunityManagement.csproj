@@ -401,9 +401,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\dog&amp;fish.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
       <Visible>False</Visible>
       <ProductName>.NET Framework 3.5 SP1</ProductName>
@@ -412,6 +409,22 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="p9.ico" />
+    <None Include="Resources\QQ图片20191229030809.png" />
+    <None Include="Resources\QQ图片20191229030804.png" />
+    <None Include="Resources\QQ截图20191229025028.png" />
+    <None Include="Resources\QQ图片20191229023709.png" />
+    <None Include="Resources\setting.png" />
+    <None Include="Resources\print.png" />
+    <None Include="Resources\resi.png" />
+    <None Include="Resources\sss.png" />
+    <None Include="Resources\v2-c61845d4fa724c17b39b388aa4d3bf2a_1200x500.jpg" />
+    <None Include="Resources\dGoi-fyitapp2615360.jpg" />
+    <None Include="Resources\185741976255.png" />
+    <None Include="Resources\59224812e90c5.png" />
+    <None Include="Resources\330816-1Z62303510310.jpg" />
+    <None Include="Resources\58108d334df19_610.jpg" />
+    <None Include="Resources\2018-06-09-50377e4a4b-941e-4820-9f8c-cfc490a1a89d.jpg" />
+    <None Include="Resources\62d295a4_E415045_59fa090b.png" />
     <None Include="Resources\p9.ico" />
   </ItemGroup>
   <ItemGroup>

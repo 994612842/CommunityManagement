@@ -189,22 +189,25 @@
             this.statusStrip1.Location = new System.Drawing.Point(0, 336);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(286, 22);
+            this.statusStrip1.SizingGrip = false;
             this.statusStrip1.TabIndex = 12;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // toolStripStatusLabel1
             // 
+            this.toolStripStatusLabel1.BackColor = System.Drawing.SystemColors.Control;
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(122, 17);
             this.toolStripStatusLabel1.Text = "请点击\'测试连接\'按钮";
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Location = new System.Drawing.Point(13, 13);
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pictureBox1.Image = global::CommunityManagement.Properties.Resources.QQ截图20191229025028;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(261, 37);
+            this.pictureBox1.Size = new System.Drawing.Size(286, 59);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
@@ -212,6 +215,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightSkyBlue;
             this.ClientSize = new System.Drawing.Size(286, 358);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.button2);

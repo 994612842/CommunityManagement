@@ -63,9 +63,169 @@ namespace CommunityManagement.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap _185741976255 {
+            get {
+                object obj = ResourceManager.GetObject("185741976255", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap _2018_06_09_50377e4a4b_941e_4820_9f8c_cfc490a1a89d {
+            get {
+                object obj = ResourceManager.GetObject("2018-06-09-50377e4a4b-941e-4820-9f8c-cfc490a1a89d", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap _330816_1Z62303510310 {
+            get {
+                object obj = ResourceManager.GetObject("330816-1Z62303510310", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap _58108d334df19_610 {
+            get {
+                object obj = ResourceManager.GetObject("58108d334df19_610", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap _59224812e90c5 {
+            get {
+                object obj = ResourceManager.GetObject("59224812e90c5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap _62d295a4_E415045_59fa090b {
+            get {
+                object obj = ResourceManager.GetObject("62d295a4_E415045_59fa090b", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap dGoi_fyitapp2615360 {
+            get {
+                object obj = ResourceManager.GetObject("dGoi-fyitapp2615360", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap p9 {
             get {
                 object obj = ResourceManager.GetObject("p9", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap print {
+            get {
+                object obj = ResourceManager.GetObject("print", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap QQ图片20191229023709 {
+            get {
+                object obj = ResourceManager.GetObject("QQ图片20191229023709", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap QQ图片20191229030804 {
+            get {
+                object obj = ResourceManager.GetObject("QQ图片20191229030804", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap QQ图片20191229030809 {
+            get {
+                object obj = ResourceManager.GetObject("QQ图片20191229030809", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap QQ截图20191229025028 {
+            get {
+                object obj = ResourceManager.GetObject("QQ截图20191229025028", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap resi {
+            get {
+                object obj = ResourceManager.GetObject("resi", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap setting {
+            get {
+                object obj = ResourceManager.GetObject("setting", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap sss {
+            get {
+                object obj = ResourceManager.GetObject("sss", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap v2_c61845d4fa724c17b39b388aa4d3bf2a_1200x500 {
+            get {
+                object obj = ResourceManager.GetObject("v2-c61845d4fa724c17b39b388aa4d3bf2a_1200x500", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

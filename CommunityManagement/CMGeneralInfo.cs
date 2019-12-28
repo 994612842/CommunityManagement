@@ -27,6 +27,7 @@ namespace CommunityManagement
 
         private void 社区团体管理ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            pictureBox1.Visible = false;
             if (Application.OpenForms["Organizations"] == null)
             {
                 foreach (Form open in this.MdiChildren)
@@ -44,6 +45,7 @@ namespace CommunityManagement
 
         private void 社区文体信息管理ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            pictureBox1.Visible = false;
             if (Application.OpenForms["CultureEvent"] == null)
             {
                 foreach (Form open in this.MdiChildren)
@@ -60,6 +62,7 @@ namespace CommunityManagement
 
         private void 治安管理ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            pictureBox1.Visible = false;
             if (Application.OpenForms["CommunitySafety"] == null)
             {
                 foreach (Form open in this.MdiChildren)
@@ -76,6 +79,7 @@ namespace CommunityManagement
 
         private void 纠纷调解管理ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            pictureBox1.Visible = false;
             if (Application.OpenForms["Contradiction"] == null)
             {
                 foreach (Form open in this.MdiChildren)

@@ -33,9 +33,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 12);
+            this.button1.Location = new System.Drawing.Point(73, 37);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(145, 83);
+            this.button1.Size = new System.Drawing.Size(174, 35);
             this.button1.TabIndex = 0;
             this.button1.Text = "更改数据库连接配置文件";
             this.button1.UseVisualStyleBackColor = true;
@@ -45,7 +45,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(393, 258);
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(321, 178);
             this.Controls.Add(this.button1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
