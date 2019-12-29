@@ -354,7 +354,7 @@ namespace CommunityManagement
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Oops!", MessageBoxButtons.OK);
+                MessageBox.Show("发生了错误，可能是添加了重复的身份证号或未按要求填写正确的信息,错误信息如下:\n"+ex.Message , "Oops!", MessageBoxButtons.OK);
             }
             finally
             {

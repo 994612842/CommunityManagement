@@ -18,6 +18,7 @@ namespace CommunityManagement
 
         private void Settings_FormClosed(object sender, FormClosedEventArgs e)
         {
+            CMSysMaintained.maintained = new CMSysMaintained();
             CMSysMaintained.maintained.Show();
         }
 

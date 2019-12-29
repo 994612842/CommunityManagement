@@ -268,6 +268,7 @@
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "CMResident";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "居民档案管理";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CMResident_FormClosed);
             this.Load += new System.EventHandler(this.CMResident_Load);

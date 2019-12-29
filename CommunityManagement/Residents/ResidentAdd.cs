@@ -22,16 +22,37 @@ namespace CommunityManagement
         /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
+            StringsRel strings = new StringsRel();
             if (textBox1.Text.Trim() != "" && textBox2.Text.Trim() != "")
             {
-                CMResident.value1 = textBox1.Text.Trim();
+                if (textBox1.Text.Length != 18 || strings.isnumber(textBox1.Text.Trim())==false || double.Parse(textBox1.Text.Trim())<0)
+                {
+                    MessageBox.Show("身份证位数不为18位或其信息错误","不被接受的数据",MessageBoxButtons.OK);
+                    return;
+                }
+                else
+                    CMResident.value1 = textBox1.Text.Trim();
+
                 CMResident.value2 = textBox2.Text.Trim();
                 CMResident.value3 = comboBox1.SelectedItem.ToString();
                 if (textBox4.Text.Trim() == "")
                     CMResident.value4 = null;
+                else if (strings.isnumber(textBox4.Text.Trim()) == false || int.Parse(textBox4.Text.Trim()) < 0)
+                {
+                    MessageBox.Show("年龄为负或不为数字"+"\n请检查年龄字段是否正确输入","不被接受的数据",MessageBoxButtons.OK);
+                    return;
+                }
                 else
                     CMResident.value4 = short.Parse(textBox4.Text.Trim());
-                CMResident.value5 = textBox5.Text.Trim();
+                if (textBox5.Text.Trim() == "")
+                    CMResident.value5 = textBox5.Text.Trim();
+                else if (textBox5.Text.Length != 11)
+                {
+                    MessageBox.Show("电话号码不未11位", "Oops", MessageBoxButtons.OK);
+                    return;
+                }
+                else
+                    CMResident.value5 = textBox5.Text.Trim();
                 CMResident.value6 = textBox6.Text.Trim();
                 CMResident.value7 = textBox7.Text.Trim();
                 if (textBox8.Text.Trim() == "")
@@ -99,6 +120,7 @@ namespace CommunityManagement
 
         private void ResidentAdd_Load(object sender, EventArgs e)
         {
+            comboBox1.SelectedItem = "男";
             panel1.BackColor = Color.Transparent;
             panel2.BackColor = Color.Transparent;
             if(this.Text == "修改住户信息")
