@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CMLogin));
             this.Login_User = new System.Windows.Forms.Label();
             this.Login_UserName = new System.Windows.Forms.TextBox();
             this.Login_Pwd = new System.Windows.Forms.Label();
@@ -35,14 +36,19 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // Login_User
             // 
             this.Login_User.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Login_User.AutoSize = true;
-            this.Login_User.Location = new System.Drawing.Point(108, 69);
+            this.Login_User.Location = new System.Drawing.Point(108, 76);
             this.Login_User.Name = "Login_User";
             this.Login_User.Size = new System.Drawing.Size(47, 12);
             this.Login_User.TabIndex = 5;
@@ -51,7 +57,7 @@
             // Login_UserName
             // 
             this.Login_UserName.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Login_UserName.Location = new System.Drawing.Point(161, 66);
+            this.Login_UserName.Location = new System.Drawing.Point(161, 73);
             this.Login_UserName.Name = "Login_UserName";
             this.Login_UserName.Size = new System.Drawing.Size(100, 21);
             this.Login_UserName.TabIndex = 0;
@@ -60,7 +66,7 @@
             // 
             this.Login_Pwd.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Login_Pwd.AutoSize = true;
-            this.Login_Pwd.Location = new System.Drawing.Point(108, 107);
+            this.Login_Pwd.Location = new System.Drawing.Point(107, 129);
             this.Login_Pwd.Name = "Login_Pwd";
             this.Login_Pwd.Size = new System.Drawing.Size(47, 12);
             this.Login_Pwd.TabIndex = 6;
@@ -69,18 +75,19 @@
             // Login_Password
             // 
             this.Login_Password.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Login_Password.Location = new System.Drawing.Point(161, 104);
+            this.Login_Password.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.Login_Password.Location = new System.Drawing.Point(161, 126);
             this.Login_Password.MaxLength = 24;
             this.Login_Password.Name = "Login_Password";
-            this.Login_Password.PasswordChar = '*';
             this.Login_Password.Size = new System.Drawing.Size(100, 21);
             this.Login_Password.TabIndex = 1;
+            this.Login_Password.UseSystemPasswordChar = true;
             // 
             // button1
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.button1.Location = new System.Drawing.Point(80, 181);
+            this.button1.Location = new System.Drawing.Point(80, 188);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 2;
@@ -92,7 +99,7 @@
             // 
             this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.button2.Location = new System.Drawing.Point(242, 181);
+            this.button2.Location = new System.Drawing.Point(242, 188);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 4;
@@ -104,7 +111,7 @@
             // 
             this.button3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.button3.Location = new System.Drawing.Point(161, 181);
+            this.button3.Location = new System.Drawing.Point(161, 188);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 3;
@@ -112,26 +119,47 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // textBox1
+            // pictureBox3
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox1.Location = new System.Drawing.Point(2, 240);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(382, 21);
-            this.textBox1.TabIndex = 7;
-            this.textBox1.TabStop = false;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox3.Image = global::CommunityManagement.Properties.Resources.QQ图片20191229030809;
+            this.pictureBox3.Location = new System.Drawing.Point(60, 111);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(41, 40);
+            this.pictureBox3.TabIndex = 7;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox2.Image = global::CommunityManagement.Properties.Resources.QQ图片20191229030804;
+            this.pictureBox2.Location = new System.Drawing.Point(60, 61);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(42, 44);
+            this.pictureBox2.TabIndex = 7;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox1.Image = global::CommunityManagement.Properties.Resources.p9;
+            this.pictureBox1.Location = new System.Drawing.Point(174, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(45, 44);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
             // 
             // CMLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(385, 262);
-            this.Controls.Add(this.textBox1);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(385, 276);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -139,11 +167,15 @@
             this.Controls.Add(this.Login_Password);
             this.Controls.Add(this.Login_UserName);
             this.Controls.Add(this.Login_User);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CMLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "社区管理系统-登录";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CMLogin_FormClosing);
             this.Load += new System.EventHandler(this.CMLogin_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -158,7 +190,9 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }
 

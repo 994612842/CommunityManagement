@@ -26,6 +26,13 @@ namespace CommunityManagement
 
         private void CultureEvent_Load(object sender, EventArgs e)
         {
+            if (CMLogin.identity != "0")
+            {
+                button4.Visible = false;
+                button5.Visible = false;
+                button6.Visible = false;
+                button3.Location = new Point(316, 316);
+            }
             try
             {
                 if (conn.State != ConnectionState.Open)

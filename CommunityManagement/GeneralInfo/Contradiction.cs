@@ -100,6 +100,13 @@ namespace CommunityManagement
 
         private void Contradiction_Load(object sender, EventArgs e)
         {
+            if (CMLogin.identity != "0")
+            {
+                button4.Visible = false;
+                button5.Visible = false;
+                button6.Visible = false;
+                button3.Location = new Point(365, 365);
+            }
             button3.PerformClick();
         }
         //显示所有信息

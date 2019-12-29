@@ -98,6 +98,11 @@ namespace CommunityManagement
 
         private void Subsistence_Load(object sender, EventArgs e)
         {
+            if (CMLogin.identity != "0")
+            {
+                button4.Visible = false;
+                button3.Location = new Point(343, 343);
+            }
             button3.PerformClick();
         }
         //模糊查询

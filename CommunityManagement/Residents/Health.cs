@@ -123,6 +123,11 @@ namespace CommunityManagement
 
         private void Health_Load(object sender, EventArgs e)
         {
+            if (CMLogin.identity != "0")
+            {
+                button5.Visible = false;
+                button3.Location = new Point(343, 343);
+            }
             button3.PerformClick();
         }
         

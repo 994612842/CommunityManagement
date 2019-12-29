@@ -26,6 +26,7 @@ namespace CommunityManagement
 
         private void 低保发放统计表ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            pictureBox1.Visible = false;
             if (Application.OpenForms["SubsistenceSheet"] == null)
             {
                 foreach (Form open in this.MdiChildren)
@@ -44,6 +45,7 @@ namespace CommunityManagement
 
         private void 文体活动统计表ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            pictureBox1.Visible = false;
             if (Application.OpenForms["Recreational"] == null)
             {
                 foreach (Form open in this.MdiChildren)
@@ -61,6 +63,7 @@ namespace CommunityManagement
 
         private void 社区志愿者统计表ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            pictureBox1.Visible = false;
             if (Application.OpenForms["VolunteerSheet"] == null)
             {
                 foreach (Form open in this.MdiChildren)
@@ -78,6 +81,7 @@ namespace CommunityManagement
 
         private void 下岗人员统计表ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            pictureBox1.Visible = false;
             if (Application.OpenForms["LaidoffSheet"] == null)
             {
                 foreach (Form open in this.MdiChildren)
