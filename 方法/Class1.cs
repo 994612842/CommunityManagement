@@ -8,11 +8,6 @@ using System.Configuration;
 
 namespace CommunityManagement
 {
-    public enum useridentity
-    {
-        administrators,
-        user
-    }
     /// <summary>
     /// 公用字段，包括sql数据库信息，是否第一次运行
     /// </summary>
@@ -21,7 +16,7 @@ namespace CommunityManagement
         /// <summary>
         /// 析构函数
         /// </summary>
-         ~PublicString()
+        ~PublicString()
         {
         }
         /// <summary>
@@ -78,11 +73,11 @@ namespace CommunityManagement
         /// <param name="DB">数据库</param>
         /// <param name="UD">用户名</param>
         /// <param name="PSD">密码</param>
-        public void Write(string DS,string DB,string UD,string PSD,PublicString publicString)
+        public void Write(string DS, string DB, string UD, string PSD, PublicString publicString)
         {
             Configuration cfg = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
 
-            cfg.ConnectionStrings.ConnectionStrings["connectionString"].ConnectionString = 
+            cfg.ConnectionStrings.ConnectionStrings["connectionString"].ConnectionString =
                 $"Data Source={DS};" +
                 $"Initial Catalog={DB};" +
                 "Persist Security Info=True;" +
@@ -98,7 +93,7 @@ namespace CommunityManagement
         /// </summary>
         /// <param name="DS">"Data Source"要登录的服务器 </param>
         /// <param name="DB">"Initial Catalog"要连接的数据库</param>
-        public void Write(string DS, string DB,PublicString publicString)
+        public void Write(string DS, string DB, PublicString publicString)
         {
             Configuration cfg = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
 
@@ -110,6 +105,26 @@ namespace CommunityManagement
             cfg.Save();
             ConfigurationManager.RefreshSection("connectionStrings");
             publicString.isFirstRun = false;
+        }
+    }
+
+    public class StringsRel
+    {
+        /// <summary>
+        /// 判断输入到字符串是否为数字
+        /// </summary>
+        /// <param name="s">要判断的字符串</param>
+        /// <returns></returns>
+        public bool isnumber(string s)
+        {
+            for(int i = 0;i< s.Length;i++)
+            {
+                if(s[i]<'0' || s[i]>'9')
+                {
+                    return false;
+                }
+            }
+            return true;
         }
     }
     /// <summary>

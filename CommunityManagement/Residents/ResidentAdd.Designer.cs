@@ -872,6 +872,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "ResidentAdd";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "添加新住户";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ResidentAdd_FormClosed);
             this.Load += new System.EventHandler(this.ResidentAdd_Load);
